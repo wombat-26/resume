@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthias Eckardt - Technical Writer Portfolio</title>
+    <style>
+        /* Import fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap');
+        
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Base styles - Dark Mode */
+        body {
+            font-family: 'Fira Code', monospace;
+            font-size: 10pt;
+            line-height: 1.6;
+            color: #e0e0e0;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #121212;
+        }
+        
+        /* Header section */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #58a6ff;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            font-family: 'Roboto Slab', Georgia, serif;
+            font-size: 24pt;
+            font-weight: 700;
+            color: #58a6ff;
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            font-family: 'Roboto Slab', Georgia, serif;
+            font-size: 14pt;
+            font-weight: 700;
+            color: #58a6ff;
+            margin-top: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-weight: 600;
+            color: #e0e0e0;
+            margin-top: 0;
+        }
+        
+        /* Section styles */
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        /* Work samples */
+        .work-sample {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1e1e1e;
+            border-left: 4px solid #58a6ff;
+        }
+        
+        .work-sample p {
+            margin-bottom: 10px;
+        }
+        
+        /* Links */
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Skill tags */
+        .skill-tag {
+            display: inline-block;
+            background-color: #253341;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            color: #58a6ff;
+            border: 1px solid #394b59;
+        }
+        
+        /* Contact and profile */
+        .contact {
+            font-size: 9pt;
+            color: #a0a0a0;
+        }
+        
+        .title {
+            font-size: 14pt;
+            font-weight: 500;
+            color: #a0a0a0;
+            margin-bottom: 10px;
+        }
+        
+        /* PDF-specific */
+        @media print {
+            body {
+                background-color: white;
+                color: #333;
+                padding: 0;
+                font-size: 10pt;
+            }
+            
+            .work-sample {
+                background-color: #f5f5f5;
+                border-left: 4px solid #0366d6;
+            }
+            
+            h1, h2 {
+                color: #0366d6;
+            }
+            
+            a {
+                color: #0366d6;
+            }
+            
+            .skill-tag {
+                background-color: #e6f0ff;
+                color: #0366d6;
+                border: 1px solid #cce5ff;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Matthias Eckardt</h1>
+        <p class="title">Technical Writer | API Documentation Specialist | Automation Expert</p>
+    </header>
+
+    <section class="section">
+        <h2>About Me</h2>
+        <p>With extensive experience in technical documentation, I specialize in creating clear, comprehensive documentation for complex software systems. My expertise spans from API documentation and scripting tutorials to user guides and integration manuals. I have particular strength in documenting Adobe InDesign automation, REST APIs, and enterprise software solutions.</p>
+        <p>My background in both Scripting and system integration allows me to bridge the gap between technical concepts and clear explanations that benefit both developers and end users.</p>
+    </section>
+
+    <section class="section">
+        <h2>Portfolio Samples</h2>
+        
+        <div class="work-sample">
+            <h3>Scripting Adobe InDesign Tutorial</h3>
+            <p>A comprehensive guide for non-programmers to get started with AppleScript automation in Adobe InDesign.</p>
+            <p><span class="skill-tag">AppleScript</span> <span class="skill-tag">Adobe InDesign</span> <span class="skill-tag">Automation</span></p>
+            <p>Uploaded sample: <a href="#">Scripting Adobe InDesign Beginners Class - Early Hour.pdf</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>REST API Documentation for Adobe InDesign/InCopy</h3>
+            <p>Technical reference documentation for the REST API available for Adobe InDesign/InCopy via the censhare Plug-In.</p>
+            <p><span class="skill-tag">REST API</span> <span class="skill-tag">Adobe InDesign</span> <span class="skill-tag">InCopy</span> <span class="skill-tag">Integration</span></p>
+            <p>Uploaded sample: <a href="#">Writing Samples_Matthias Eckardt.pdf</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>Uptempo Release Notes</h3>
+            <p>Detailed documentation of new features, improvements, and changes in the BrandMaker 8.0 release.</p>
+            <p><span class="skill-tag">Release Notes</span> <span class="skill-tag">Marketing Software</span> <span class="skill-tag">Change Documentation</span></p>
+            <p><a href="https://knowledge.uptempo.io/doc/BM_Uptempo_en_109800000000/Content/02%20BrandMaker/2410/WorkReleaseBM8_0.htm">View Release Notes</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>API Developer Portal</h3>
+            <p>Comprehensive documentation portal for developers integrating with the BrandMaker/Uptempo API platform.</p>
+            <p><span class="skill-tag">API Documentation</span> <span class="skill-tag">Developer Portal</span> <span class="skill-tag">Integration</span></p>
+            <p><a href="https://developers.brandmaker.com">Visit API Portal</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>API Changelog</h3>
+            <p>Detailed tracking of API changes, updates, and deprecations to assist developers in maintaining integrations.</p>
+            <p><span class="skill-tag">API Documentation</span> <span class="skill-tag">Changelog</span> <span class="skill-tag">Version Control</span></p>
+            <p><a href="https://developers.brandmaker.com/guides/changelog/">View API Changelog</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>Knowledge Base</h3>
+            <p>Comprehensive knowledge base documentation for Uptempo products and features.</p>
+            <p><span class="skill-tag">Knowledge Base</span> <span class="skill-tag">User Documentation</span> <span class="skill-tag">Help System</span></p>
+            <p><a href="https://knowledge.uptempo.io/doc/BM_Uptempo_en_109900000000/Content/Home.htm">Explore Knowledge Base</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>SSO Integration with SAML</h3>
+            <p>Technical description for implementing Single Sign-On (SSO) with SAML authentication protocol.</p>
+            <p><span class="skill-tag">Security</span> <span class="skill-tag">Authentication</span> <span class="skill-tag">Integration</span> <span class="skill-tag">SAML</span></p>
+            <p><a href="https://knowledge.uptempo.io/doc/BM_Uptempo_en_105000000000/Content/01%20Uptempo/Uptempo.htm?Highlight=SSO">View SSO Integration Guide</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>Tableau Analytics Documentation</h3>
+            <p>User guide for implementing and using Tableau analytics within the Uptempo platform.</p>
+            <p><span class="skill-tag">Data Analytics</span> <span class="skill-tag">Tableau</span> <span class="skill-tag">Reporting</span></p>
+            <p><a href="https://knowledge.uptempo.io/doc/BM_Uptempo_en_700100000000/Content/Home.htm">View Tableau Analytics Documentation</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>Advanced Sort and Filter Documentation</h3>
+            <p>Comprehensive guide on using advanced sorting and filtering capabilities in BrandMaker's Management system.</p>
+            <p><span class="skill-tag">User Guide</span> <span class="skill-tag">Data Management</span> <span class="skill-tag">Search Functionality</span></p>
+            <p>
+                <a href="https://download.brandmaker.com/doc/BM_help_en_100300000002/en-us/Content/03%20Management/14-0%20Filtern%20Sortieren.htm">Filter and Sort Overview</a><br>
+                <a href="https://download.brandmaker.com/doc/BM_help_en_100300000002/en-us/Content/03%20Management/14-2%20Filtern%20Sortieren.htm">Advanced Filtering Techniques</a><br>
+                <a href="https://download.brandmaker.com/doc/BM_help_en_100300000002/en-us/Content/03%20Management/14-2%20Filtern%20Sortieren.htm">Custom Sorting Options</a>
+            </p>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>censhare Technical Documentation</h2>
+        
+        <div class="work-sample">
+            <h3>Page Planning Display Options</h3>
+            <p>System administration documentation for configuring page planning display options in censhare Classic.</p>
+            <p><span class="skill-tag">System Administration</span> <span class="skill-tag">Digital Asset Management</span> <span class="skill-tag">Configuration</span></p>
+            <p><a href="https://documentation.censhare.com/censhare-classic-3/2020/page-planning-display-options-csclient_sysadmin">View Documentation</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>Video Preview Generation and Transcoding</h3>
+            <p>Technical guide detailing the process of generating video previews and implementing transcoding functionality in censhare.</p>
+            <p><span class="skill-tag">Video Processing</span> <span class="skill-tag">Media Management</span> <span class="skill-tag">Technical Implementation</span></p>
+            <p><a href="https://documentation.censhare.com/censhare-classic-3/2020/generate-video-previews-and-transcode">View Documentation</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>FFmpeg Video Transcoding Implementation</h3>
+            <p>System administrator guide for implementing and configuring FFmpeg for video transcoding within the censhare environment.</p>
+            <p><span class="skill-tag">FFmpeg</span> <span class="skill-tag">Video Processing</span> <span class="skill-tag">System Integration</span></p>
+            <p><a href="https://documentation.censhare.com/censhare-classic-3/2020/video-transcoding-with-ffmpeg-sysadmin">View Documentation</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>Image Slicing Implementation</h3>
+            <p>Technical documentation for activating and configuring the image slicing functionality, including XSL transformation setup.</p>
+            <p><span class="skill-tag">Image Processing</span> <span class="skill-tag">XSL</span> <span class="skill-tag">Technical Configuration</span></p>
+            <p><a href="https://documentation.censhare.com/censhare-classic-3/2020/activate-image-slicing-csclient_sysadmin#ActivateimageslicingcsClient_sysadmin-CreateXSLtransformation">View Documentation</a></p>
+        </div>
+        
+        <div class="work-sample">
+            <h3>PNG Optimization with pngquant</h3>
+            <p>Technical guide for implementing PNG image optimization using pngquant within the censhare ecosystem.</p>
+            <p><span class="skill-tag">Image Optimization</span> <span class="skill-tag">PNG Processing</span> <span class="skill-tag">Integration</span></p>
+            <p><a href="https://documentation.censhare.com/censhare-classic-3/2020/indexed-png-image-files-converted-with-pngquant-_s">View Documentation</a></p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Key Skills</h2>
+        <div>
+            <span class="skill-tag">Technical Writing</span>
+            <span class="skill-tag">API Documentation</span>
+            <span class="skill-tag">Scripting</span>
+            <span class="skill-tag">Adobe Creative Suite</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">User Guides</span>
+            <span class="skill-tag">Release Notes</span>
+            <span class="skill-tag">Integration Documentation</span>
+            <span class="skill-tag">Knowledge Base Management</span>
+            <span class="skill-tag">Markdown</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">XML</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">PowerShell</span>
+            <span class="skill-tag">CLI (Unix, Linux, macOS)</span>
+        </div>
+    </section>
+
+    <footer>
+        <p class="contact">© 2025 <a href="https://wombat-26.github.io/resume/">Matthias Eckardt</a> - Technical Writer Portfolio</p>
+    </footer>
+</body>
+</html>
