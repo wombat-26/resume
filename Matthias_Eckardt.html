@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthias Eckardt - Silicon Valley Resume</title>
+    <style>
+        /* Import fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;700&display=swap');
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Base styles */
+        body {
+            font-family: 'Fira Code', monospace;
+            font-size: 10pt;
+            line-height: 1.5;
+            color: #333;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background-color: white;
+        }
+        
+        /* Header section */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #0366d6;
+            padding-bottom: 15px;
+        }
+        
+        .name {
+            font-family: 'Roboto Slab', Georgia, serif;
+            font-size: 24pt;
+            font-weight: 700;
+            color: #0366d6;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 14pt;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .contact {
+            font-size: 9pt;
+            color: #555;
+        }
+        
+        /* Section styles */
+        .section {
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-family: 'Roboto Slab', Georgia, serif;
+            font-size: 14pt;
+            font-weight: 700;
+            color: #0366d6;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 3px;
+        }
+        
+        /* Profile section */
+        .profile {
+            margin-bottom: 15px;
+        }
+        
+        /* Competencies section */
+        .competencies-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .competency {
+            background-color: #f0f7ff;
+            border-left: 3px solid #0366d6;
+            padding: 4px 10px;
+            margin-bottom: 5px;
+        }
+        
+        .competency-title {
+            font-weight: 600;
+        }
+        
+        /* Experience section */
+        .experience-item {
+            margin-bottom: 12px;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: #0366d6;
+        }
+        
+        .job-details {
+            font-style: italic;
+            font-size: 9pt;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .job-description ul {
+            padding-left: 20px;
+        }
+        
+        .job-description li {
+            margin-bottom: 4px;
+        }
+        
+        /* Skills section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-group {
+            flex: 1 1 45%;
+            margin-bottom: 10px;
+        }
+        
+        .skill-title {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        /* Two-column layout for bottom sections */
+        .two-column {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        /* Links */
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* PDF-specific */
+        @media print {
+            body {
+                padding: 0;
+                font-size: 10pt;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1 class="name">MATTHIAS ECKARDT</h1>
+        <div class="title">Senior Technical Writer & Documentation Engineer</div>
+        <div class="contact">
+            Munich, Germany | +49 170-805-2141 | meckardt@me.com | <a href="https://www.linkedin.com/in/meckardt26">LinkedIn</a> | <a href="https://github.com/brandmaker/devportal-website/commits?author=eckardtm">GitHub</a>
+        </div>
+    </div>
+    
+    <!-- Profile -->
+    <div class="section profile">
+        <h2 class="section-title">PROFILE</h2>
+        <p>Detail-oriented Senior Technical Writer with 11+ years of expertise in technical documentation for enterprise software and SaaS products. Specializing in API documentation, developer portals, and implementing Docs-as-Code practices. Experienced in maintaining and optimizing static site generators (Jekyll, Eleventy) with CI/CD integration. Proven ability to collaborate cross-functionally with engineering, product management, and UX teams to create comprehensive, high-quality documentation for technical audiences.</p>
+    </div>
+    
+    <!-- Core Competencies -->
+    <div class="section">
+        <h2 class="section-title">CORE COMPETENCIES</h2>
+        <div class="competencies-container">
+            <div class="competency">
+                <span class="competency-title">Documentation Engineering:</span> API documentation, developer portals, Docs-as-Code workflows, content planning
+            </div>
+            <div class="competency">
+                <span class="competency-title">Technical Implementation:</span> Git-based publishing, CI/CD integration, static site generators (Jekyll, Eleventy)
+            </div>
+            <div class="competency">
+                <span class="competency-title">Web Technologies:</span> HTML, CSS, JavaScript, Markdown, XML, command-line proficiency
+            </div>
+            <div class="competency">
+                <span class="competency-title">Collaboration:</span> Cross-functional engagement with developers, QA, product managers, and UX teams
+            </div>
+            <div class="competency">
+                <span class="competency-title">Languages:</span> German (native), English (fluent)
+            </div>
+        </div>
+    </div>
+    
+    <!-- Professional Experience -->
+    <div class="section">
+        <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+        
+        <!-- Uptempo -->
+        <div class="experience-item">
+            <div class="job-title">
+                <span class="company">Uptempo.io</span> — Senior Technical Writer
+            </div>
+            <div class="job-details">Remote, Germany | April 2023 - Present</div>
+            <div class="job-description">
+                <ul>
+                    <li>Own and manage the company's API portal in an international English-speaking team environment, implementing Docs-as-Code practices with version control and CI/CD integration</li>
+                    <li>Engineered and optimized documentation workflows through automating API changelog generation using Node.js, Eleventy static site generator, and npm tools based on OpenAPI JSON (<a href="https://github.com/brandmaker/devportal-website/commits?author=eckardtm">GitHub contributions</a>)</li>
+                    <li>Implemented documentation quality standards by converting the company style guide into Vale format for linting, enabling consistency enforcement and facilitating onboarding</li>
+                    <li>Implemented responsive design using HTML, CSS, and JavaScript for documentation portal</li>
+                    <li>Deployed documentation through CI/CD pipeline with version control</li>
+                    <li>Developed data-driven content strategy for API documentation, resulting in improved usability and information architecture</li>
+                    <li>Collaborate extensively with international software developers, product managers, and QA teams to document new features and product changes</li>
+                    <li>Created and maintained comprehensive English-language knowledge base documentation (<a href="https://knowledge.uptempo.io">knowledge.uptempo.io</a>) including Release Notes and API reference materials</li>
+                    <li>Monitored documentation analytics to make data-driven decisions for content improvements</li>
+                    <li>Optimized site performance and integrated Intercom Fin Bot for support</li>
+                    <li>Used product knowledge and user feedback to continuously improve content quality and organization</li>
+                    <li>Received official recognition for "consistently high work quality" and "proactive improvement suggestions" in company performance review</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- BrandMaker -->
+        <div class="experience-item">
+            <div class="job-title">
+                <span class="company">BrandMaker (renamed to Uptempo)</span> — Technical Writer
+            </div>
+            <div class="job-details">Remote, Germany | November 2021 - March 2023</div>
+            <div class="job-description">
+                <ul>
+                    <li>Created comprehensive documentation for Marketing Resource Management (MRM) SaaS products</li>
+                    <li>Implemented basic Docs-as-Code practices for MadCap Flare output, improving consistency and version control</li>
+                    <li>Managed translation projects and terminology between German and English</li>
+                    <li>Collaborated with international product management, enablement, QA, and support teams</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- censhare AG -->
+        <div class="experience-item">
+            <div class="job-title">
+                <span class="company">censhare AG</span> — Technical Writer & Quality Assurance
+            </div>
+            <div class="job-details">Munich, Germany | December 2011 - December 2015</div>
+            <div class="job-description">
+                <ul>
+                    <li>Authored comprehensive technical documentation for enterprise-level Content Management System, targeting developers, system administrators, and end-users</li>
+                    <li>Implemented and optimized documentation workflows using Git version control and continuous integration processes</li>
+                    <li>Became an expert user of the product, testing each procedure and workflow thoroughly to ensure documentation accuracy</li>
+                    <li>Wrote technical notes, edited release notes, and managed content deployment to the online customer portal in both German and English</li>
+                    <li>Collaborated directly with scrum development teams, UX experts, support staff, and project managers to align documentation with product features</li>
+                    <li>Tested complex user scenarios by compiling server and client environments from Git repositories and configuring integrations with third-party software</li>
+                    <li>Led initiatives to improve information architecture and content organization of the documentation site</li>
+                    <li>Consistently provided feedback to product development teams based on documentation testing findings</li>
+                    <li>Maintained alignment with agile development cycles while ensuring documentation quality and consistency</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Previous Experience (Abbreviated) -->
+        <div class="experience-item">
+            <div class="job-title">
+                <span class="company">Previous Experience</span>
+            </div>
+            <div class="job-description">
+                <ul>
+                    <li><strong>eDok.de:</strong> Technical Writer (2019-2021) — Documented special machinery, PLC systems, and medical technology</li>
+                    <li><strong>CANCOM GmbH:</strong> Technical Writer (2018-2019) — Implemented CCMS and updated enterprise software documentation</li>
+                    <li><strong>Freelance:</strong> Relativity e-Discovery software administrator (2017-2018) — Managed forensic analysis of data from applications and databases; conducted compliance reviews for aerospace clients</li>
+                    <li><strong>MACup Magazine:</strong> Editor (2009-2011) — Created content on macOS, iOS and technology topics</li>
+                    <li><strong>Condé Nast Verlag GmbH:</strong> System Administrator (2007-2008) — Managed macOS environments and publication systems</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Technical Skills -->
+    <div class="section">
+        <h2 class="section-title">TECHNICAL SKILLS</h2>
+        <div class="skills-container">
+            <div class="skill-group">
+                <div class="skill-title">Documentation Tools:</div>
+                MadCap Flare, XML editors, Markdown, AsciiDoc, static site generators (Jekyll, Eleventy), Pandoc
+            </div>
+            <div class="skill-group">
+                <div class="skill-title">Web Development:</div>
+                HTML, CSS, JavaScript, responsive design principles
+            </div>
+            <div class="skill-group">
+                <div class="skill-title">Programming:</div>
+                Node.js, bash scripting, PowerShell, understanding of programming concepts
+            </div>
+            <div class="skill-group">
+                <div class="skill-title">Version Control & CI/CD:</div>
+                Git, GitHub Actions, workflow automation, docs-as-code practices
+            </div>
+            <div class="skill-group">
+                <div class="skill-title">Project & Task Management:</div>
+                Jira, Confluence, Productboard, agile collaboration tools
+            </div>
+            <div class="skill-group">
+                <div class="skill-title">Operating Systems:</div>
+                Advanced Linux and macOS CLI expertise (24+ years), Windows
+            </div>
+            <div class="skill-group">
+                <div class="skill-title">Documentation Metrics:</div>
+                Content usage analytics, technical documentation ROI assessment
+            </div>
+        </div>
+    </div>
+    
+    <!-- Two-column layout for bottom sections -->
+    <div class="two-column">
+        <!-- Left Column -->
+        <div class="column">
+            <!-- Education -->
+            <div class="section">
+                <h2 class="section-title">EDUCATION</h2>
+                <div class="experience-item">
+                    <div class="job-title">Ludwig-Maximilians-University Munich</div>
+                    <div class="job-details">Studies in Modern German Literature, English Literature (not completed) | 1993 - 1998</div>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">Professional Bookseller Certification</div>
+                    <div class="job-details">German Apprenticeship Program | 1988 - 1991</div>
+                </div>
+            </div>
+            
+            <!-- Publications -->
+            <div class="section">
+                <h2 class="section-title">PUBLICATIONS</h2>
+                <p><strong>Books:</strong></p>
+<ul style="list-style-type: circle;">
+<li>"Mac OS X 10.4 for Power Users and Administrators" (2005)</li>
+<li>"The Mac OS X Book" (2003)</li>
+<li>"Insider's Guide to Photoshop 7" (Translation, 2003)</li>
+<li>"iLife '08 &ndash; Creativity on Mac" (2008)</li>
+<li>"iTunes 7 Tips and Tricks" (2007)<br /><br /><strong>
+</ul>
+Blog:<br /></strong>created with Ruby/Jekyll static site generator&nbsp;<strong>MECmags Technical Blog</strong> (<a href="https://web.archive.org/web/20190213115031/http://www.mecmags.de/">Archived Link</a>) |&nbsp;</li>
+
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Right Column -->
+        <div class="column">
+            <!-- Certifications -->
+            <div class="section">
+                <h2 class="section-title">LATEST CERTIFICATIONS</h2>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li><strong>The Power of Accurate Prompting with Anthropic's Claude</strong> (2024)</li>
+                    <li><strong>GitHub Actions with Python: Fundamentals</strong> (2024)</li>
+                    <li><strong>UX Writing Fundamentals: A Comprehensive Guide</strong> (2023)</li>
+                    <li><strong>Agile Project Management Practitioner</strong> (2023)</li>
+                    <li><strong>AI Skills for Technical Leaders</strong> (2023)</li>
+                    <li><strong>SCHEMA ST4 Configuration</strong> (2021)</li>
+                </ul>
+            </div>
+            
+            <!-- Personal Strengths & Growth Areas -->
+            <div class="section">
+                <h2 class="section-title">STRENGTHS & GROWTH AREAS</h2>
+                <div style="margin-bottom: 10px;">
+                    <div class="skill-title">Strengths:</div>
+                    <ul>
+                        <li>Meticulous attention to detail combined with technical proficiency</li>
+                        <li>Process optimization and workflow automation expertise</li>
+                        <li>Strong analytical and research capabilities</li>
+                        <li>Quick adoption of new tools and technologies</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="skill-title">Growth Areas:</div>
+                    <ul>
+                       <li>Extensive practical experience compensates for unfinished academic studies</li>
+						<li>Career path showing variety - demonstrates adaptability but less vertical progression</li>
+						<li>Primarily European work experience - seeking to expand into US tech environment</li>
+						<li>DevOps target group</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
