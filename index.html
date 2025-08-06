@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matthias Eckardt - Senior Technical Writer Lebenslauf">
+    <meta name="author" content="Matthias Eckardt">
     <title>Matthias Eckardt - Lebenslauf</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
+        /* 
+         * DRUCKEINSTELLUNGEN: 
+         * Für beste Druckergebnisse:
+         * 1. Aktivieren Sie "Hintergrundgrafiken" oder "Hintergründe drucken" im Druckdialog
+         * 2. Stellen Sie den Farbmodus auf "Farbe" nicht "Schwarz-Weiß"
+         * 3. Nutzen Sie die Druckvorschau zur Kontrolle der Farben
+         * 
+         * Chrome/Edge: Weitere Einstellungen → Optionen → Hintergrundgrafiken ☑
+         * Firefox: Seite einrichten → Format & Optionen → Hintergrund drucken ☑
+         * Safari: Druckdetails → Hintergründe drucken ☑
+         */
         
         * {
             margin: 0;
@@ -285,23 +299,408 @@
             line-height: 1.2;
         }
         
-        /* Print styles */
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            .container {
-                box-shadow: none;
-                border-radius: 0;
-            }
-        }
-        
         /* Icon styles */
         .icon {
             width: 14px;
             height: 14px;
             fill: currentColor;
+        }
+        
+        /* Page break controls for better printing */
+        .section, .experience-item, .education-item, .skill-card {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            page-break-after: avoid;
+            break-after: avoid;
+        }
+        
+        /* Orphans and widows control */
+        p, li {
+            orphans: 3;
+            widows: 3;
+        }
+        
+        /* Force color printing for decorative elements */
+        @media print and (color) {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 15mm 10mm 15mm 10mm;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* WebKit/Safari specific fixes */
+            @supports (-webkit-appearance: none) {
+                * {
+                    -webkit-print-color-adjust: exact !important;
+                }
+            }
+            
+            /* Firefox specific fixes */
+            @-moz-document url-prefix() {
+                * {
+                    color-adjust: exact !important;
+                }
+            }
+            
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+                font-size: 10pt;
+                line-height: 1.4;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .header {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+                padding: 20px 25px;
+                /* Solid color fallback */
+                background: #2563eb !important;
+                background: rgb(37, 99, 235) !important;
+                /* Try gradient if supported */
+                background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .header::after {
+                /* Solid color fallback */
+                background: #f59e0b !important;
+                background: rgb(245, 158, 11) !important;
+                /* Try gradient if supported */
+                background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .name {
+                font-size: 22pt;
+            }
+            
+            .title {
+                font-size: 13pt;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                page-break-after: avoid;
+                font-size: 12pt;
+                margin-bottom: 10px;
+            }
+            
+            .experience-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .job-header {
+                page-break-after: avoid;
+            }
+            
+            .job-description {
+                page-break-inside: avoid;
+            }
+            
+            .job-description ul {
+                page-break-inside: auto;
+            }
+            
+            .job-description li {
+                page-break-inside: avoid;
+                font-size: 9pt;
+                margin-bottom: 4px;
+                orphans: 2;
+                widows: 2;
+            }
+            
+            /* Allow breaking for very long job descriptions */
+            .job-description ul li:nth-child(n+5) {
+                page-break-inside: auto;
+            }
+            
+            /* Force page break before certain sections if needed */
+            .professional-experience {
+                page-break-before: auto;
+            }
+            
+            /* Keep the first 2-3 experience items on the same page if possible */
+            .experience-item:first-child,
+            .experience-item:nth-child(2) {
+                page-break-after: avoid;
+            }
+            
+            .two-columns {
+                page-break-before: auto;
+                page-break-inside: avoid;
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+                margin-top: 20px;
+            }
+            
+            /* Ensure columns don't break internally */
+            .two-columns > div {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .two-columns .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .skill-card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                padding: 10px;
+            }
+            
+            .skills-grid {
+                page-break-inside: avoid;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            
+            /* Fallback for browsers with poor grid support in print */
+            @supports not (display: grid) {
+                .skills-grid {
+                    display: block;
+                }
+                .skill-card {
+                    display: inline-block;
+                    width: 48%;
+                    margin-right: 2%;
+                    margin-bottom: 10px;
+                    vertical-align: top;
+                }
+            }
+            
+            .competency-tags {
+                page-break-inside: avoid;
+            }
+            
+            .tag {
+                page-break-inside: avoid;
+                padding: 4px 12px;
+                font-size: 9pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .cert-list li {
+                page-break-inside: avoid;
+                font-size: 9pt;
+            }
+            
+            .education-item {
+                page-break-inside: avoid;
+            }
+            
+            .language-item {
+                page-break-inside: avoid;
+            }
+            
+            .profile-text {
+                font-size: 10pt;
+                line-height: 1.5;
+            }
+            
+            .company-name {
+                font-size: 11pt;
+            }
+            
+            .job-title {
+                font-size: 10pt;
+            }
+            
+            .job-meta {
+                font-size: 9pt;
+            }
+            
+            /* Ensure proper page breaks */
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+            }
+            
+            p {
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Keep related content together */
+            ul, ol {
+                page-break-inside: avoid;
+            }
+            
+            li {
+                page-break-inside: avoid;
+            }
+            
+            /* Adjust colors for better print quality - using RGB fallbacks */
+            .section-title {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+                font-weight: 700;
+            }
+            
+            .section-title::before {
+                background: #2563eb !important;
+                background: rgb(37, 99, 235) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .experience-item::before {
+                background: #2563eb !important;
+                background: rgb(37, 99, 235) !important;
+                border: 3px solid white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .experience-item {
+                border-left-color: #e1e4e8 !important;
+                border-left-color: rgb(225, 228, 232) !important;
+            }
+            
+            .company-name {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+                font-size: 11pt;
+            }
+            
+            .skill-card {
+                border-left-color: #2563eb !important;
+                border-left-color: rgb(37, 99, 235) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .skill-category {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+            }
+            
+            .tag {
+                background: #dbeafe !important;
+                background: rgb(219, 234, 254) !important;
+                color: #1e40af !important;
+                color: rgb(30, 64, 175) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .cert-list li::before {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+            }
+            
+            .education-item::before {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+            }
+            
+            .language-item {
+                background: #f8f9fa !important;
+                background: rgb(248, 249, 250) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            /* Hide unnecessary elements */
+            .contact-item a:after {
+                content: none !important;
+            }
+            
+            /* 
+             * ALTERNATIVE: Falls Farben immer noch falsch gedruckt werden,
+             * kommentieren Sie diesen Abschnitt aus für eine Schwarz-Weiß-Version:
+             * 
+             * Hinweis: Einige Drucker konvertieren Blau zwangsweise zu Schwarz/Grau 
+             * um Farbtinte zu sparen. Prüfen Sie die "Sparmodus" oder "Entwurfsmodus" 
+             * Einstellungen Ihres Druckers und deaktivieren Sie diese.
+             */
+            /*
+            .header {
+                background: none !important;
+                color: #000 !important;
+                border-bottom: 3px solid #000 !important;
+            }
+            .header::after {
+                display: none !important;
+            }
+            .section-title {
+                color: #000 !important;
+            }
+            .section-title::before {
+                background: #000 !important;
+            }
+            .company-name {
+                color: #000 !important;
+            }
+            .skill-category {
+                color: #000 !important;
+            }
+            .skill-card {
+                border-left-color: #000 !important;
+            }
+            .experience-item::before {
+                background: #000 !important;
+            }
+            .tag {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                border: 1px solid #000 !important;
+            }
+            .cert-list li::before,
+            .education-item::before {
+                color: #000 !important;
+            }
+            */
         }
     </style>
 </head>
@@ -376,7 +775,7 @@
             </div>
             
             <!-- Berufserfahrung -->
-            <div class="section">
+            <div class="section professional-experience">
                 <h2 class="section-title">Berufserfahrung</h2>
                 
                 <div class="experience-item">
@@ -613,7 +1012,7 @@
                             <li>Expertise in Prozessoptimierung und Workflow-Automatisierung</li>
                             <li>Starke analytische und Recherchefähigkeiten</li>
                             <li>Schnelle Einarbeitung in neue Tools und Technologien</li>
-                            <li>Vielseitige Berufserfahrung beweist hohe Anpassungsfähigkeit</li>
+                            <li>Vielseitige Berufserfahrung beweist hohes Maß an Anpassungsfähigkeit</li>
                         </ul>
                     </div>
 
