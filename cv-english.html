@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matthias Eckardt - Senior Technical Writer CV">
+    <meta name="author" content="Matthias Eckardt">
+    <title>Matthias Eckardt - CV</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
+        /* 
+         * PRINT SETTINGS: 
+         * For best results when printing:
+         * 1. Enable "Background graphics" or "Print backgrounds" in your print dialog
+         * 2. Set color mode to "Color" not "Black & White"
+         * 3. Use print preview to check colors before printing
+         * 
+         * Chrome/Edge: More Settings → Options → Background graphics ☑
+         * Firefox: Page Setup → Format & Options → Print Background ☑
+         * Safari: Print Details → Print backgrounds ☑
+         */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 25px 40px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+        }
+        
+        .name {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 26pt;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.8px;
+        }
+        
+        .title {
+            font-size: 15pt;
+            font-weight: 400;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 10pt;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main content */
+        .content {
+            padding: 40px;
+        }
+        
+        /* Section styles */
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .two-columns .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14pt;
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: #2563eb;
+            border-radius: 2px;
+        }
+        
+        /* Profile */
+        .profile-text {
+            font-size: 11pt;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .skill-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .skill-category {
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 8px;
+            font-size: 10pt;
+        }
+        
+        .skill-items {
+            font-size: 10pt;
+            color: #555;
+        }
+        
+        /* Experience */
+        .experience-item {
+            margin-bottom: 25px;
+            border-left: 3px solid #e1e4e8;
+            padding-left: 30px;
+            position: relative;
+            margin-left: 10px;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            background: #2563eb;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-sizing: border-box;
+        }
+        
+        .job-header {
+            margin-bottom: 10px;
+        }
+        
+        .company-name {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .job-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .job-meta {
+            font-size: 10pt;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .job-description {
+            margin-top: 10px;
+        }
+        
+        .job-description ul {
+            padding-left: 20px;
+        }
+        
+        .job-description li {
+            margin-bottom: 6px;
+            font-size: 10pt;
+            color: #444;
+        }
+        
+        /* Two columns */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        /* Certifications */
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .cert-list li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 9.5pt;
+            line-height: 1.4;
+        }
+        
+        .cert-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+        
+        /* Competencies */
+        .competency-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 10pt;
+            font-weight: 500;
+        }
+        
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        /* Education items */
+        .education-item {
+            margin-bottom: 20px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .education-item::before {
+            content: '•';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            color: #2563eb;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+        
+        /* Print styles */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 15mm 10mm 15mm 10mm;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* WebKit/Safari specific fixes */
+            @supports (-webkit-appearance: none) {
+                * {
+                    -webkit-print-color-adjust: exact !important;
+                }
+            }
+            
+            /* Firefox specific fixes */
+            @-moz-document url-prefix() {
+                * {
+                    color-adjust: exact !important;
+                }
+            }
+            
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+                font-size: 10pt;
+                line-height: 1.4;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .header {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+                padding: 20px 25px;
+                /* Solid color fallback */
+                background: #2563eb !important;
+                background: rgb(37, 99, 235) !important;
+                /* Try gradient if supported */
+                background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .header::after {
+                /* Solid color fallback */
+                background: #f59e0b !important;
+                background: rgb(245, 158, 11) !important;
+                /* Try gradient if supported */
+                background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .name {
+                font-size: 22pt;
+            }
+            
+            .title {
+                font-size: 13pt;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                page-break-after: avoid;
+                font-size: 12pt;
+                margin-bottom: 10px;
+            }
+            
+            .experience-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .job-header {
+                page-break-after: avoid;
+            }
+            
+            .job-description {
+                page-break-inside: avoid;
+            }
+            
+            .job-description ul {
+                page-break-inside: auto;
+            }
+            
+            .job-description li {
+                page-break-inside: avoid;
+                font-size: 9pt;
+                margin-bottom: 4px;
+                orphans: 2;
+                widows: 2;
+            }
+            
+            /* Allow breaking for very long job descriptions */
+            .job-description ul li:nth-child(n+5) {
+                page-break-inside: auto;
+            }
+            
+            .two-columns {
+                page-break-before: auto;
+                page-break-inside: avoid;
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+                margin-top: 20px;
+            }
+            
+            /* Ensure columns don't break internally */
+            .two-columns > div {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .two-columns .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .skill-card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                padding: 10px;
+            }
+            
+            .skills-grid {
+                page-break-inside: avoid;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            
+            /* Fallback for browsers with poor grid support in print */
+            @supports not (display: grid) {
+                .skills-grid {
+                    display: block;
+                }
+                .skill-card {
+                    display: inline-block;
+                    width: 48%;
+                    margin-right: 2%;
+                    margin-bottom: 10px;
+                    vertical-align: top;
+                }
+            }
+            
+            .competency-tags {
+                page-break-inside: avoid;
+            }
+            
+            .tag {
+                page-break-inside: avoid;
+                padding: 4px 12px;
+                font-size: 9pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .cert-list li {
+                page-break-inside: avoid;
+                font-size: 9pt;
+            }
+            
+            .education-item {
+                page-break-inside: avoid;
+            }
+            
+            .language-item {
+                page-break-inside: avoid;
+            }
+            
+            .profile-text {
+                font-size: 10pt;
+                line-height: 1.5;
+            }
+            
+            .company-name {
+                font-size: 11pt;
+            }
+            
+            .job-title {
+                font-size: 10pt;
+            }
+            
+            .job-meta {
+                font-size: 9pt;
+            }
+            
+            /* Ensure proper page breaks */
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+            }
+            
+            p {
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Keep related content together */
+            ul, ol {
+                page-break-inside: avoid;
+            }
+            
+            li {
+                page-break-inside: avoid;
+            }
+            
+            /* Force page break before certain sections if needed */
+            .professional-experience {
+                page-break-before: auto;
+            }
+            
+            /* Keep the first 2-3 experience items on the same page if possible */
+            .experience-item:first-child,
+            .experience-item:nth-child(2) {
+                page-break-after: avoid;
+            }
+            
+            /* Adjust colors for better print quality - using RGB fallbacks */
+            .section-title {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+                font-weight: 700;
+            }
+            
+            .section-title::before {
+                background: #2563eb !important;
+                background: rgb(37, 99, 235) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .experience-item::before {
+                background: #2563eb !important;
+                background: rgb(37, 99, 235) !important;
+                border: 3px solid white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .experience-item {
+                border-left-color: #e1e4e8 !important;
+                border-left-color: rgb(225, 228, 232) !important;
+            }
+            
+            .company-name {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+                font-size: 11pt;
+            }
+            
+            .skill-card {
+                border-left-color: #2563eb !important;
+                border-left-color: rgb(37, 99, 235) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .skill-category {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+            }
+            
+            .tag {
+                background: #dbeafe !important;
+                background: rgb(219, 234, 254) !important;
+                color: #1e40af !important;
+                color: rgb(30, 64, 175) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .cert-list li::before {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+            }
+            
+            .education-item::before {
+                color: #2563eb !important;
+                color: rgb(37, 99, 235) !important;
+            }
+            
+            .language-item {
+                background: #f8f9fa !important;
+                background: rgb(248, 249, 250) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            /* Hide unnecessary elements */
+            .contact-item a:after {
+                content: none !important;
+            }
+            
+            /* 
+             * ALTERNATIVE: If colors still print incorrectly, uncomment this section
+             * to use a black & white optimized version:
+             * 
+             * Note: Some printers forcibly convert blue to black/grey to save color ink.
+             * Check your printer's "Economy Mode" or "Draft Mode" settings and disable them.
+             */
+            /*
+            .header {
+                background: none !important;
+                color: #000 !important;
+                border-bottom: 3px solid #000 !important;
+            }
+            .header::after {
+                display: none !important;
+            }
+            .section-title {
+                color: #000 !important;
+            }
+            .section-title::before {
+                background: #000 !important;
+            }
+            .company-name {
+                color: #000 !important;
+            }
+            .skill-category {
+                color: #000 !important;
+            }
+            .skill-card {
+                border-left-color: #000 !important;
+            }
+            .experience-item::before {
+                background: #000 !important;
+            }
+            .tag {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                border: 1px solid #000 !important;
+            }
+            .cert-list li::before,
+            .education-item::before {
+                color: #000 !important;
+            }
+            */
+        }
+        
+        /* Icon styles */
+        .icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+        
+        /* Page break controls for better printing */
+        .section, .experience-item, .education-item, .skill-card {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            page-break-after: avoid;
+            break-after: avoid;
+        }
+        
+        /* Orphans and widows control */
+        p, li {
+            orphans: 3;
+            widows: 3;
+        }
+        
+        /* Force color printing for decorative elements */
+        @media print and (color) {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name">Matthias Eckardt</h1>
+            <div class="title">Senior Technical Writer</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Munich, Germany
+                </div>
+                <div class="contact-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    +49 170-805-2141
+                </div>
+                <div class="contact-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:meckardt@me.com">meckardt@me.com</a>
+                </div>
+                <div class="contact-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    <a href="https://www.linkedin.com/in/meckardt26">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                    <a href="https://wombat-26.github.io/resume/portfolio-page.html">Portfolio</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Profile -->
+            <div class="section">
+                <h2 class="section-title">Profile</h2>
+                <p class="profile-text">
+                    Senior Technical Writer with 13+ years of expertise in enterprise and SaaS environments. Focus on modern API documentation and developer experience.
+                </p>
+                <p class="profile-text" style="margin-top: 15px;">
+                    <strong>Core Expertise:</strong> Transformation of traditional documentation processes to agile docs-as-code workflows • Building and optimising developer portals with static site generators (Jekyll, Eleventy) • CI/CD integration for automated documentation pipelines
+                </p>
+                <p class="profile-text" style="margin-top: 15px;">
+                    <strong>Current Focus:</strong> Development of AI-powered documentation solutions • Automation with Claude Code • Migration from legacy systems (MadCap Flare) to modern platforms (AsciiDoc) • Implementation of Vale for consistent content quality
+                </p>
+                <p class="profile-text" style="margin-top: 15px;">
+                    <strong>Working Style:</strong> Close collaboration with Engineering, Product and UX • Data-driven content strategies • Focus on developer experience and technical audiences
+                </p>
+            </div>
+            
+            <!-- Core Competencies -->
+            <div class="section">
+                <h2 class="section-title">Core Competencies</h2>
+                <div class="competency-tags">
+                    <span class="tag">Technical Writing</span>
+                    <span class="tag">API Documentation</span>
+                    <span class="tag">Developer Portal</span>
+                    <span class="tag">Docs-as-Code</span>
+                    <span class="tag">Terminology Management</span>
+                    <span class="tag">Vale Style Guide</span>
+                    <span class="tag">IntelliJ IDEA</span>
+                    <span class="tag">Claude Code Development</span>
+                    <span class="tag">AsciiDoc</span>
+                    <span class="tag">Git/CI/CD</span>
+                    <span class="tag">Translation Management</span>
+                    <span class="tag">Agile Methods</span>
+                    <span class="tag">UX Writing</span>
+                    <span class="tag">Content Strategy</span>
+                </div>
+            </div>
+            
+            <!-- Professional Experience -->
+            <div class="section professional-experience">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">Uptempo.io</div>
+                        <div class="job-title">Senior Technical Writer</div>
+                        <div class="job-meta">Remote, Germany | April 2023 - Present</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Responsibility for company API portal with implementation of docs-as-code practices, version control and CI/CD integration</li>
+                            <li>Development of automated converter from MadCap Flare source projects to AsciiDoc using Claude Code</li>
+                            <li>Implementation and maintenance of Vale-based style guides for consistent documentation quality</li>
+                            <li>Automation of API changelog generation using Node.js, Swagger, Eleventy and npm tools based on OpenAPI JSON</li>
+                            <li>Development of data-driven content strategy for API documentation with improved usability and information architecture</li>
+                            <li>Close collaboration with international development teams, product managers and QA for new feature documentation</li>
+                            <li>Creation and maintenance of English knowledge base (knowledge.uptempo.io) including release notes</li>
+                            <li>Recognition for consistently high work quality and proactive improvement suggestions</li>
+                            <li>Onboarding of new employees as Technical Writer and Product Manager</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">BrandMaker (now Uptempo GmbH)</div>
+                        <div class="job-title">Technical Writer</div>
+                        <div class="job-meta">Remote, Germany | November 2021 - March 2023</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Creation of comprehensive documentation for Marketing Resource Management (MRM) SaaS products</li>
+                            <li>Implementation of UI key variables for MadCap Flare for higher text and translation quality</li>
+                            <li>Responsibility for terminology and UX copy (DE/EN)</li>
+                            <li>Terminology work and management of translation projects between German and English</li>
+                            <li>Collaboration with international product, enablement, QA and support teams</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">eDok Eisenrieth Dokumentations GmbH</div>
+                        <div class="job-title">Technical Writer</div>
+                        <div class="job-meta">Germany | March 2019 - June 2021</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Technical documentation for special machine construction, PLC systems (Siemens TIA) and medical technology</li>
+                            <li>Creation of operating instructions according to Machinery Directive 2006/42/EC</li>
+                            <li>Documentation of complex technical systems and processes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">CANCOM GmbH</div>
+                        <div class="job-title">Technical Writer</div>
+                        <div class="job-meta">Munich | November 2018 - March 2019</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Documentation for "AHP Enterprise Cloud" platform</li>
+                            <li>Creation of administrator manuals and technical guides</li>
+                            <li>Collaboration with cloud architects and development teams</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">Freelance Work</div>
+                        <div class="job-title">Document Management Administrator</div>
+                        <div class="job-meta">March 2017 - October 2018</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Administration of Relativity e-Discovery software for forensic data analysis</li>
+                            <li>Creation of complex search queries, tagging and batch processing of documents</li>
+                            <li>Compliance checking and filtering of sensitive content (classified documents) before data exports</li>
+                            <li>Support for international compliance projects in the aerospace industry</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">censhare AG</div>
+                        <div class="job-title">Technical Writer & Quality Assurance</div>
+                        <div class="job-meta">Munich, Germany | December 2011 - December 2015</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Creation of comprehensive technical documentation for an Enterprise Content Management System</li>
+                            <li>Implementation and optimisation of documentation workflows</li>
+                            <li>Expert product knowledge through intensive testing of all procedures and workflows</li>
+                            <li>Direct collaboration with Scrum teams, UX experts and project managers</li>
+                            <li>Leading role in improving the information architecture of the documentation site</li>
+                            <li>Conducting black-box, usability and user acceptance tests</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">MACup Magazine / Neue Mediengesellschaft Ulm</div>
+                        <div class="job-title">Editor</div>
+                        <div class="job-meta">Munich | January 2009 - June 2011</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Responsible editor for "MACup", "iPhone & Co" and "iPad & Co" magazines</li>
+                            <li>Writing technical articles on macOS, iOS, DTP and application practice</li>
+                            <li>Conducting hardware and software tests with detailed analyses</li>
+                            <li>Daily online news reporting and content management</li>
+                            <li>Acquisition and supervision of external specialist authors</li>
+                            <li>Editorial quality assurance and proofreading</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">Earlier Positions</div>
+                        <div class="job-title">Various Roles</div>
+                        <div class="job-meta">2000 - 2008</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li><strong>Condé Nast Verlag (2007-2008):</strong> System Administrator, censhare training and DTP support</li>
+                            <li><strong>Greinwalder & Partner (2004-2006):</strong> Pre-press, proofreading and quality assurance</li>
+                            <li><strong>Freelance (2002-2004):</strong> Editor, author and translator for specialist publications</li>
+                            <li><strong>buecher.de AG (2000-2001):</strong> Online editor and content manager</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technical Skills -->
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-category">Documentation Tools</div>
+                        <div class="skill-items">Vale, IntelliJ IDEA, AsciiDoc, MadCap Flare, Writerside, XML editors, Markdown, Jekyll, Eleventy, Pandoc</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Development & Web</div>
+                        <div class="skill-items">HTML, CSS, JavaScript, Node.js, Responsive Design, Claude Code Integration</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Version Control & CI/CD</div>
+                        <div class="skill-items">Git, GitHub Actions, Workflow Automation, Docs-as-Code</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Project & Task Management</div>
+                        <div class="skill-items">Jira, Confluence, Productboard, Agile Collaboration</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Operating Systems</div>
+                        <div class="skill-items">Excellent Linux and macOS CLI expertise, Windows PowerShell basics</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Analytics & Metrics</div>
+                        <div class="skill-items">Content usage analysis, ROI evaluation of technical documentation</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Two columns section -->
+            <div class="two-columns">
+                <div>
+                    <div class="section">
+                        <h2 class="section-title">Education & Training</h2>
+                        <div class="education-item">
+                            <div class="job-title">Ludwig Maximilian University Munich</div>
+                            <div class="job-meta">Modern German Literature, English Studies | 1993 - 1998</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="job-title">Bookseller Apprenticeship</div>
+                            <div class="job-meta">Completed Professional Training (IHK) | 1988 - 1991</div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">Publications</h2>
+                        <ul class="cert-list">
+                            <li><strong>iLife '08 – Kreativität am Mac für alle</strong> (2008)<br>
+                                ISBN 3908497639, Pfäffikon</li>
+                            <li><strong>iTunes-7-Trickkiste</strong> (2007)<br>
+                                E-Book at eload24.com, Baar</li>
+                            <li><strong>iLife '06</strong> (2006)<br>
+                                ISBN 3908497361, Pfäffikon</li>
+                            <li><strong>Mac OS X 10.4 für Power-User und Administratoren</strong> (2005)<br>
+                                ISBN 3908497213, Pfäffikon</li>
+                            <li><strong>Das Mac OS X-Buch</strong> (2003)<br>
+                                ISBN 3907020553, Zurich</li>
+                            <li><strong>Insiderbuch Photoshop 7</strong> (2003)<br>
+                                Translation and adaptation, ISBN 3907020359, Zurich</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">Languages</h2>
+                        <div class="language-item">
+                            <span>German</span>
+                            <span>Native</span>
+                        </div>
+                        <div class="language-item">
+                            <span>English</span>
+                            <span>Fluent (C1/C2)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="section">
+                        <h2 class="section-title">Current Certifications</h2>
+                        <ul class="cert-list">
+                            <li>AI-Driven Software Development with OpenAI's Canvas (2025)</li>
+                            <li>The Power of Accurate Prompting with Anthropic's Claude (2024)</li>
+                            <li>GitHub Actions with Python: Fundamentals (2024)</li>
+                            <li>UX Writing Fundamentals (2023)</li>
+                            <li>Agile Project Management Practitioner (2023)</li>
+                            <li>AI Skills for Technical Leaders (2023)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">Strengths</h2>
+                        <ul class="cert-list">
+                            <li>Exceptional attention to detail combined with technical competence</li>
+                            <li>Expertise in process optimisation and workflow automation</li>
+                            <li>Strong analytical and research skills</li>
+                            <li>Quick familiarisation with new tools and technologies</li>
+                            <li>Diverse professional experience demonstrates high adaptability</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Leadership Skills</h2>
+                        <ul class="cert-list">
+                            <li><strong>Mentoring:</strong> Knowledge transfer and onboarding of new team members</li>
+                            <li><strong>Process Leadership:</strong> Establishing standards and best practices</li>
+                            <li><strong>Stakeholder Management:</strong> Successful coordination between development, product and UX</li>
+                            <li><strong>Strategic Planning:</strong> Development of data-driven content strategies</li>
+                            <li><strong>Change Management:</strong> Implementation of new tools and workflows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
