@@ -13,7 +13,7 @@ This repository contains my professional CV and portfolio, showcasing 13+ years 
 
 ### Language Versions
 - **[English CV →](https://wombat-26.github.io/resume/cv-english.html)**
-- **[German CV →](https://wombat-26.github.io/resume/MatthiasEckardt-Lebenslauf-Aktualisiert.html)**
+- **[German CV →](https://wombat-26.github.io/resume/MatthiasEckardt-Lebenslauf-Aktualisert.html)**
 
 ## 💼 Professional Focus
 
