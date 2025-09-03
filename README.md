@@ -13,7 +13,7 @@ This repository contains my professional CV and portfolio, showcasing 13+ years 
 
 ### Language Versions
 - **[English CV →](https://wombat-26.github.io/resume/cv-english.html)**
-- **[German CV →](https://wombat-26.github.io/resume/MatthiasEckardt-Lebenslauf-Korrigiert.html)**
+- **[German CV →](https://wombat-26.github.io/resume/MatthiasEckardt-Lebenslauf-Aktualisiert.html)**
 
 ## 💼 Professional Focus
 
@@ -53,7 +53,7 @@ This CV is built with modern web technologies and SEO best practices:
 ```
 resume/
 ├── index.html                              # Main CV page
-├── MatthiasEckardt-Lebenslauf-Korrigiert.html # German CV version
+├── MatthiasEckardt-Lebenslauf-Aktualisiert.html # German CV version
 ├── portfolio-page.html                     # Portfolio showcase
 ├── sitemap.xml                            # Search engine sitemap
 ├── robots.txt                             # Crawler instructions
