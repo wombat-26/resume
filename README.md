@@ -96,6 +96,6 @@ This CV template and design is available for personal use. Please credit if you 
 
 ---
 
-*Last updated: January 2025*
+*Last updated: September 3, 2025*
 
 **[→ View Live CV](https://wombat-26.github.io/resume/)**
