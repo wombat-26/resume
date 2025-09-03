@@ -47,10 +47,28 @@
         
         /* Header */
         .header {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #3d5a4f 0%, #2d4a3f 100%);
             color: white;
             padding: 25px 40px;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            margin-left: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
         }
         
         .header::after {
@@ -81,14 +99,15 @@
         .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            font-size: 10pt;
+            gap: 15px;
+            font-size: 9.5pt;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
+            white-space: nowrap;
         }
         
         .contact-item a {
@@ -118,7 +137,7 @@
             font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 14pt;
             font-weight: 600;
-            color: #2563eb;
+            color: #3d5a4f;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -129,7 +148,7 @@
             content: '';
             width: 4px;
             height: 24px;
-            background: #2563eb;
+            background: #3d5a4f;
             border-radius: 2px;
         }
         
@@ -152,12 +171,12 @@
             background: #f8f9fa;
             border-radius: 8px;
             padding: 15px;
-            border-left: 4px solid #2563eb;
+            border-left: 4px solid #3d5a4f;
         }
         
         .skill-category {
             font-weight: 600;
-            color: #2563eb;
+            color: #3d5a4f;
             margin-bottom: 8px;
             font-size: 10pt;
         }
@@ -183,7 +202,7 @@
             top: 5px;
             width: 13px;
             height: 13px;
-            background: #2563eb;
+            background: #3d5a4f;
             border-radius: 50%;
             border: 3px solid white;
             box-sizing: border-box;
@@ -196,7 +215,7 @@
         .company-name {
             font-size: 13pt;
             font-weight: 700;
-            color: #2563eb;
+            color: #3d5a4f;
         }
         
         .job-title {
@@ -251,7 +270,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #2563eb;
+            color: #3d5a4f;
             font-weight: bold;
         }
         
@@ -264,8 +283,8 @@
         }
         
         .tag {
-            background: #dbeafe;
-            color: #1e40af;
+            background: #e8ebe9;
+            color: #2d4a3f;
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 10pt;
@@ -294,7 +313,7 @@
             position: absolute;
             left: 8px;
             top: 0;
-            color: #2563eb;
+            color: #3d5a4f;
             font-size: 20px;
             line-height: 1.2;
         }
@@ -387,13 +406,22 @@
                 page-break-inside: avoid;
                 padding: 20px 25px;
                 /* Solid color fallback */
-                background: #2563eb !important;
-                background: rgb(37, 99, 235) !important;
+                background: #3d5a4f !important;
+                background: rgb(61, 90, 79) !important;
                 /* Try gradient if supported */
-                background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+                background: linear-gradient(135deg, #3d5a4f 0%, #2d4a3f 100%) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 color-adjust: exact !important;
+                display: block !important;
+            }
+            
+            .header-content {
+                display: block !important;
+            }
+            
+            .profile-photo {
+                display: none !important;
             }
             
             .header::after {
@@ -582,21 +610,21 @@
             
             /* Adjust colors for better print quality - using RGB fallbacks */
             .section-title {
-                color: #2563eb !important;
-                color: rgb(37, 99, 235) !important;
+                color: #3d5a4f !important;
+                color: rgb(61, 90, 79) !important;
                 font-weight: 700;
             }
             
             .section-title::before {
-                background: #2563eb !important;
-                background: rgb(37, 99, 235) !important;
+                background: #3d5a4f !important;
+                background: rgb(61, 90, 79) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
             
             .experience-item::before {
-                background: #2563eb !important;
-                background: rgb(37, 99, 235) !important;
+                background: #3d5a4f !important;
+                background: rgb(61, 90, 79) !important;
                 border: 3px solid white !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -608,40 +636,40 @@
             }
             
             .company-name {
-                color: #2563eb !important;
-                color: rgb(37, 99, 235) !important;
+                color: #3d5a4f !important;
+                color: rgb(61, 90, 79) !important;
                 font-size: 11pt;
             }
             
             .skill-card {
-                border-left-color: #2563eb !important;
-                border-left-color: rgb(37, 99, 235) !important;
+                border-left-color: #3d5a4f !important;
+                border-left-color: rgb(61, 90, 79) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
             
             .skill-category {
-                color: #2563eb !important;
-                color: rgb(37, 99, 235) !important;
+                color: #3d5a4f !important;
+                color: rgb(61, 90, 79) !important;
             }
             
             .tag {
-                background: #dbeafe !important;
-                background: rgb(219, 234, 254) !important;
-                color: #1e40af !important;
-                color: rgb(30, 64, 175) !important;
+                background: #e8ebe9 !important;
+                background: rgb(232, 235, 233) !important;
+                color: #2d4a3f !important;
+                color: rgb(45, 74, 63) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
             
             .cert-list li::before {
-                color: #2563eb !important;
-                color: rgb(37, 99, 235) !important;
+                color: #3d5a4f !important;
+                color: rgb(61, 90, 79) !important;
             }
             
             .education-item::before {
-                color: #2563eb !important;
-                color: rgb(37, 99, 235) !important;
+                color: #3d5a4f !important;
+                color: rgb(61, 90, 79) !important;
             }
             
             .language-item {
@@ -655,52 +683,6 @@
             .contact-item a:after {
                 content: none !important;
             }
-            
-            /* 
-             * ALTERNATIVE: Falls Farben immer noch falsch gedruckt werden,
-             * kommentieren Sie diesen Abschnitt aus für eine Schwarz-Weiß-Version:
-             * 
-             * Hinweis: Einige Drucker konvertieren Blau zwangsweise zu Schwarz/Grau 
-             * um Farbtinte zu sparen. Prüfen Sie die "Sparmodus" oder "Entwurfsmodus" 
-             * Einstellungen Ihres Druckers und deaktivieren Sie diese.
-             */
-            /*
-            .header {
-                background: none !important;
-                color: #000 !important;
-                border-bottom: 3px solid #000 !important;
-            }
-            .header::after {
-                display: none !important;
-            }
-            .section-title {
-                color: #000 !important;
-            }
-            .section-title::before {
-                background: #000 !important;
-            }
-            .company-name {
-                color: #000 !important;
-            }
-            .skill-category {
-                color: #000 !important;
-            }
-            .skill-card {
-                border-left-color: #000 !important;
-            }
-            .experience-item::before {
-                background: #000 !important;
-            }
-            .tag {
-                background: #f0f0f0 !important;
-                color: #000 !important;
-                border: 1px solid #000 !important;
-            }
-            .cert-list li::before,
-            .education-item::before {
-                color: #000 !important;
-            }
-            */
         }
     </style>
 </head>
@@ -708,30 +690,33 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1 class="name">Matthias Eckardt</h1>
-            <div class="title">Senior Technical Writer</div>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    München
-                </div>
-                <div class="contact-item">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    +49 170-805-2141
-                </div>
-                <div class="contact-item">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    <a href="mailto:meckardt@me.com">meckardt@me.com</a>
-                </div>
-                <div class="contact-item">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                    <a href="https://www.linkedin.com/in/meckardt26">LinkedIn</a>
-                </div>
-                <div class="contact-item">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                    <a href="https://wombat-26.github.io/resume/portfolio-page.html">Portfolio</a>
+            <div class="header-content">
+                <h1 class="name">Matthias Eckardt</h1>
+                <div class="title">Senior Technical Writer</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        München
+                    </div>
+                    <div class="contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +49 170-805-2141
+                    </div>
+                    <div class="contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <a href="mailto:meckardt@me.com">meckardt@me.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        <a href="https://www.linkedin.com/in/meckardt26">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        <a href="https://wombat-26.github.io/resume/portfolio-page.html">Portfolio</a>
+                    </div>
                 </div>
             </div>
+            <img src="Matthias_Eckardt.png" alt="Matthias Eckardt" class="profile-photo">
         </div>
         
         <!-- Content -->
@@ -743,35 +728,11 @@
                     Senior Technical Writer mit 13+ Jahren Expertise im Enterprise- und SaaS-Umfeld. Fokus auf moderne API-Dokumentation und Developer Experience.
                 </p>
                 <p class="profile-text" style="margin-top: 15px;">
-                    <strong>Kernexpertise:</strong> Transformation traditioneller Dokumentationsprozesse zu agilen Docs-as-Code-Workflows • Aufbau und Optimierung von Entwicklerportalen mit Static Site Generatoren (Jekyll, Eleventy) • CI/CD-Integration für automatisierte Dokumentations-Pipelines
+                    <strong>Kernexpertise:</strong> Transformation traditioneller Dokumentationsprozesse zu agilen Docs-as-Code-Workflows • Aufbau und Optimierung von Entwicklerportalen mit Static Site Generatoren • CI/CD-Integration für automatisierte Dokumentations-Pipelines
                 </p>
                 <p class="profile-text" style="margin-top: 15px;">
-                    <strong>Aktuelle Schwerpunkte:</strong> Entwicklung KI-gestützter Dokumentationslösungen • Automatisierung mit Claude Code • Migration von Legacy-Systemen (MadCap Flare) zu modernen Plattformen (IntelliJ Idea/AsciiDoc) • Implementierung von Vale für konsistente Content-Qualität
+                    <strong>Arbeitsweise:</strong> Enge Verzahnung mit Engineering, Product und UX • Datengetriebene Content-Strategien • Entwicklung KI-gestützter Dokumentationslösungen • Fokus auf Developer Experience und technische Zielgruppen
                 </p>
-                <p class="profile-text" style="margin-top: 15px;">
-                    <strong>Arbeitsweise:</strong> Enge Verzahnung mit Engineering, Product und UX • Datengetriebene Content-Strategien • Fokus auf Developer Experience und technische Zielgruppen
-                </p>
-            </div>
-            
-            <!-- Kernkompetenzen -->
-            <div class="section">
-                <h2 class="section-title">Kernkompetenzen</h2>
-                <div class="competency-tags">
-                    <span class="tag">Technische Redaktion</span>
-                    <span class="tag">API-Dokumentation</span>
-                    <span class="tag">Entwicklerportal</span>
-                    <span class="tag">Docs-as-Code</span>
-                    <span class="tag">Terminologiemanagement</span>
-                    <span class="tag">Vale Style Guide</span>
-                    <span class="tag">IntelliJ IDEA</span>
-                    <span class="tag">Claude Code-Entwicklung</span>
-                    <span class="tag">AsciiDoc</span>
-                    <span class="tag">Git/CI/CD</span>
-                    <span class="tag">Übersetzungsmanagement</span>
-                    <span class="tag">Agile Methoden</span>
-                    <span class="tag">UX Writing</span>
-                    <span class="tag">Content-Strategie</span>
-                </div>
             </div>
             
             <!-- Berufserfahrung -->
@@ -786,13 +747,16 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Verantwortung für das API-Portal des Unternehmens mit Implementierung von Docs-as-Code-Praktiken, Versionskontrolle und CI/CD-Integration</li>
+                            <li>Erstellung und Pflege der Knowledge Base (knowledge.uptempo.io) inklusive Release Notes</li>
+                            <li>Weiterentwicklung des API-Portals des Unternehmens mit vollständiger Implementierung von Docs-as-Code-Praktiken, Versionskontrolle und CI/CD-Integration</li>
+                            <li>Enge Zusammenarbeit mit Produktmanagern und Entwicklern zur Planung der Dokumentation für jedes Release und Sicherstellung der pünktlichen Bereitstellung zum Release</li>
+                            <li>Optimierung der Auffindbarkeit von Inhalten: Verantwortung für SEO, Suchfunktionen und interne Verlinkung der Dokumentation mit Analytics-gestützter Erfolgsmessung (Bounce-Rate, Task-Completion-Rate)</li>
+                            <li>Erprobung und Implementierung von LLM-basierten Tools für Content-Erstellung, Zusammenfassungen, Linting und Stilprüfungen sowie KI-gestützte Suche und Content-Vorschläge</li>
                             <li>Entwicklung eines automatisierten Konverters von MadCap Flare Source-Projekten zu AsciiDoc oder Writerside mit Claude Code</li>
                             <li>Implementierung und Pflege von Vale-basierten Style Guides für konsistente Dokumentationsqualität</li>
                             <li>Automatisierung der API-Changelog-Generierung mit Node.js, Swagger, Eleventy und npm-Tools basierend auf OpenAPI JSON</li>
-                            <li>Entwicklung einer datengetriebenen Content-Strategie für API-Dokumentation mit verbesserter Usability und Informationsarchitektur</li>
-                            <li>Enge Zusammenarbeit mit internationalen Entwicklungsteams, Produktmanagern und QA zur Dokumentation neuer Features</li>
-                            <li>Erstellung und Pflege der englischsprachigen Knowledge Base (knowledge.uptempo.io) inklusive Release Notes</li>
+                            <li>Durchführung regelmäßiger Content-Audits, Archivierung ungenutzter Seiten</li>
+                            <li>Sicherstellung klarer, inklusiver und barrierefreier Dokumentation durch strukturierte Inhalte und Einhaltung von Accessibility-Best-Practices</li>
                             <li>Anerkennung für konstant hohe Arbeitsqualität und proaktive Verbesserungsvorschläge</li>
                             <li>Onboarding neuer Mitarbeiter als Technical Writer und Product Manager</li>
                         </ul>
@@ -854,7 +818,7 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Administration von Relativity e-Discovery Software für forensische Datenanalysen</li>
+                            <li>Administration der Relativity e-Discovery Software für forensische Datenanalysen</li>
                             <li>Erstellung komplexer Suchabfragen, Tagging und Batch-Bearbeitung von Dokumenten</li>
                             <li>Compliance-Prüfung und Filterung sensitiver Inhalte (VS-NfD) vor Datenexporten</li>
                             <li>Unterstützung bei internationalen Compliance-Projekten in der Luft- und Raumfahrtindustrie</li>
@@ -906,7 +870,7 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li><strong>Condé Nast Verlag (2007-2008):</strong> Systemadministrator, censhare-Training und DTP-Support</li>
+                            <li><strong>Condé Nast Verlag (2007-2008):</strong> Systemadministrator OS X Server, Training und DTP-Support</li>
                             <li><strong>Greinwalder & Partner (2004-2006):</strong> Druckvorstufe, Lektorat und Qualitätssicherung</li>
                             <li><strong>Freiberuflich (2002-2004):</strong> Redakteur, Autor und Übersetzer für Fachpublikationen</li>
                             <li><strong>buecher.de AG (2000-2001):</strong> Online-Redakteur und Content Manager</li>
@@ -915,9 +879,9 @@
                 </div>
             </div>
             
-            <!-- Technische Fähigkeiten -->
+            <!-- Technische Fähigkeiten & Kompetenzen -->
             <div class="section">
-                <h2 class="section-title">Technische Fähigkeiten</h2>
+                <h2 class="section-title">Technische Fähigkeiten & Kompetenzen</h2>
                 <div class="skills-grid">
                     <div class="skill-card">
                         <div class="skill-category">Dokumentations-Tools</div>
@@ -932,12 +896,12 @@
                         <div class="skill-items">Git, GitHub Actions, Workflow-Automatisierung, Docs-as-Code</div>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-category">Projekt- & Aufgabenmanagement</div>
-                        <div class="skill-items">Jira, Confluence, Productboard, Agile Zusammenarbeit</div>
-                    </div>
-                    <div class="skill-card">
                         <div class="skill-category">Betriebssysteme</div>
                         <div class="skill-items">Sehr gute Linux- und macOS-CLI-Expertise, Windows PowerShell-Grundlagen</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Projekt- & Aufgabenmanagement</div>
+                        <div class="skill-items">Jira, Confluence, Productboard, Agile Zusammenarbeit</div>
                     </div>
                     <div class="skill-card">
                         <div class="skill-category">Analytics & Metriken</div>
@@ -953,11 +917,11 @@
                         <h2 class="section-title">Berufsausbildung & Studium</h2>
                         <div class="education-item">
                             <div class="job-title">Ludwig-Maximilians-Universität München</div>
-                            <div class="job-meta">Studium Neuere Deutsche Literatur, Anglistik | 1993 - 1998</div>
+                            <div class="job-meta">Studium Neuere Deutsche Literatur, Anglistik</div>
                         </div>
                         <div class="education-item">
                             <div class="job-title">Sortimentsbuchhändler-Ausbildung</div>
-                            <div class="job-meta">Abgeschlossene Berufsausbildung IHK | 1988 - 1991</div>
+                            <div class="job-meta">Abgeschlossene Berufsausbildung IHK</div>
                         </div>
                     </div>
                     
@@ -1008,7 +972,7 @@
                     <div class="section">
                         <h2 class="section-title">Stärken</h2>
                         <ul class="cert-list">
-                            <li>Außergewöhnliche Detailgenauigkeit kombiniert mit technischer Kompetenz</li>
+                            <li>Hohe Detailgenauigkeit kombiniert mit technischer Kompetenz</li>
                             <li>Expertise in Prozessoptimierung und Workflow-Automatisierung</li>
                             <li>Starke analytische und Recherchefähigkeiten</li>
                             <li>Schnelle Einarbeitung in neue Tools und Technologien</li>
@@ -1032,3 +996,4 @@
     </div>
 </body>
 </html>
+
