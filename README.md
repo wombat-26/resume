@@ -1,8 +1,3 @@
-[# Matthias Eckardt - Senior Technical Writer
-
-[![Live CV](https://img.shields.io/badge/Live%20CV-View%20Online-green?style=for-the-badge)](https://wombat-26.github.io/resume/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-View%20Projects-blue?style=for-the-badge)](https://wombat-26.github.io/resume/portfolio-page.html)
-
 Matthias Eckardt - Senior Technical Writer & DX Specialist
 🎯 About This Project
 This repository contains the source code for my professional CV and portfolio. It showcases 13+ years of expertise in technical communication, with a focus on API documentation, docs-as-code workflows, and enhancing the developer experience (DX).
@@ -87,5 +82,4 @@ The content of this CV is my personal data. The underlying design and code are a
 Last updated: September 2025
 
 → View Live CV
-
 
