@@ -1,4 +1,4 @@
-# Matthias Eckardt - Senior Technical Writer
+[# Matthias Eckardt - Senior Technical Writer
 
 [![Live CV](https://img.shields.io/badge/Live%20CV-View%20Online-green?style=for-the-badge)](https://wombat-26.github.io/resume/)
 [![Portfolio](https://img.shields.io/badge/Portfolio-View%20Projects-blue?style=for-the-badge)](https://wombat-26.github.io/resume/portfolio-page.html)
@@ -99,3 +99,4 @@ This CV template and design is available for personal use. Please credit if you 
 *Last updated: September 3, 2025*
 
 **[→ View Live CV](https://wombat-26.github.io/resume/)**
+](https://github.com/wombat-26/resume)
