@@ -9,14 +9,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
         
-        /* 
-         * PRINT SETTINGS: 
+        /* * PRINT SETTINGS: 
          * For best results when printing:
          * 1. Enable "Background graphics" or "Print backgrounds" in your print dialog
          * 2. Set color mode to "Color" not "Black & White"
          * 3. Use print preview to check colors before printing
-         * 
-         * Chrome/Edge: More Settings → Options → Background graphics ☑
+         * * Chrome/Edge: More Settings → Options → Background graphics ☑
          * Firefox: Page Setup → Format & Options → Print Background ☑
          * Safari: Print Details → Print backgrounds ☑
          */
@@ -76,6 +74,17 @@
             font-weight: 400;
             margin-bottom: 15px;
             opacity: 0.95;
+        }
+        
+        .availability {
+            font-size: 10pt;
+            font-weight: 500;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            background: rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            border-radius: 12px;
+            display: inline-block;
         }
         
         .contact-info {
@@ -233,7 +242,7 @@
             margin-top: 30px;
         }
         
-        /* Certifications */
+        /* Certifications & Generic List */
         .cert-list {
             list-style: none;
             padding: 0;
@@ -623,51 +632,6 @@
             .contact-item a:after {
                 content: none !important;
             }
-            
-            /* 
-             * ALTERNATIVE: If colors still print incorrectly, uncomment this section
-             * to use a black & white optimized version:
-             * 
-             * Note: Some printers forcibly convert blue to black/grey to save color ink.
-             * Check your printer's "Economy Mode" or "Draft Mode" settings and disable them.
-             */
-            /*
-            .header {
-                background: none !important;
-                color: #000 !important;
-                border-bottom: 3px solid #000 !important;
-            }
-            .header::after {
-                display: none !important;
-            }
-            .section-title {
-                color: #000 !important;
-            }
-            .section-title::before {
-                background: #000 !important;
-            }
-            .company-name {
-                color: #000 !important;
-            }
-            .skill-category {
-                color: #000 !important;
-            }
-            .skill-card {
-                border-left-color: #000 !important;
-            }
-            .experience-item::before {
-                background: #000 !important;
-            }
-            .tag {
-                background: #f0f0f0 !important;
-                color: #000 !important;
-                border: 1px solid #000 !important;
-            }
-            .cert-list li::before,
-            .education-item::before {
-                color: #000 !important;
-            }
-            */
         }
         
         /* Icon styles */
@@ -705,10 +669,10 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <h1 class="name">Matthias Eckardt</h1>
-            <div class="title">Senior Technical Writer</div>
+            <div class="title">Senior Technical Writer | Documentation Strategy | Developer Experience</div>
+            <div class="availability">Available: November 1, 2025</div>
             <div class="contact-info">
                 <div class="contact-item">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -724,7 +688,7 @@
                 </div>
                 <div class="contact-item">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                    <a href="https://www.linkedin.com/in/meckardt26">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/meckardt26/?locale=en_US/">LinkedIn</a>
                 </div>
                 <div class="contact-item">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
@@ -733,47 +697,60 @@
             </div>
         </div>
         
-        <!-- Content -->
         <div class="content">
-            <!-- Profile -->
             <div class="section">
-                <h2 class="section-title">Profile</h2>
+                <h2 class="section-title">Professional Summary</h2>
                 <p class="profile-text">
-                    Senior Technical Writer with 13+ years of expertise in enterprise and SaaS environments. Focus on modern API documentation and developer experience.
-                </p>
-                <p class="profile-text" style="margin-top: 15px;">
-                    <strong>Core Expertise:</strong> Transformation of traditional documentation processes to agile docs-as-code workflows • Building and optimising developer portals with static site generators (Jekyll, Eleventy) • CI/CD integration for automated documentation pipelines
-                </p>
-                <p class="profile-text" style="margin-top: 15px;">
-                    <strong>Current Focus:</strong> Development of AI-powered documentation solutions • Automation with Claude Code • Migration from legacy systems (MadCap Flare) to modern platforms (AsciiDoc) • Implementation of Vale for consistent content quality
-                </p>
-                <p class="profile-text" style="margin-top: 15px;">
-                    <strong>Working Style:</strong> Close collaboration with Engineering, Product and UX • Data-driven content strategies • Focus on developer experience and technical audiences
+                    Senior Technical Writer with 13+ years experience in enterprise SaaS environments specializing in developer documentation, API documentation, and documentation strategy. Proven track record scaling documentation processes for fast-growing companies with open source and commercial products. Expert in docs-as-code workflows, cross-functional collaboration, and transforming traditional documentation into agile, scalable solutions. Ready to transition into management role leading technical writing teams.
                 </p>
             </div>
             
-            <!-- Core Competencies -->
             <div class="section">
                 <h2 class="section-title">Core Competencies</h2>
-                <div class="competency-tags">
-                    <span class="tag">Technical Writing</span>
-                    <span class="tag">API Documentation</span>
-                    <span class="tag">Developer Portal</span>
-                    <span class="tag">Docs-as-Code</span>
-                    <span class="tag">Terminology Management</span>
-                    <span class="tag">Vale Style Guide</span>
-                    <span class="tag">IntelliJ IDEA</span>
-                    <span class="tag">Claude Code Development</span>
-                    <span class="tag">AsciiDoc</span>
-                    <span class="tag">Git/CI/CD</span>
-                    <span class="tag">Translation Management</span>
-                    <span class="tag">Agile Methods</span>
-                    <span class="tag">UX Writing</span>
-                    <span class="tag">Content Strategy</span>
-                </div>
+                 <ul class="cert-list">
+                    <li>Documentation Strategy Development</li>
+                    <li>Developer Documentation Excellence</li>
+                    <li>API Documentation and Developer Portals</li>
+                    <li>Cross-functional Stakeholder Management</li>
+                    <li>Docs-as-Code Workflow Implementation</li>
+                    <li>Remote Team Collaboration (8+ Global Time Zones)</li>
+                    <li>Technical Writing Team Mentoring and Onboarding</li>
+                    <li>Process Improvement and Automation</li>
+                    <li>Content Quality Management with Vale Style Guides</li>
+                    <li>Agile Documentation Methodologies</li>
+                </ul>
             </div>
             
-            <!-- Professional Experience -->
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-category">Documentation Platforms and Tools</div>
+                        <div class="skill-items">Vale Style Guide Management, AsciiDoc, MadCap Flare, Writerside, Markdown, Jekyll Static Site Generator, Eleventy, Pandoc</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Development and Web Technologies</div>
+                        <div class="skill-items">HTML5, CSS3, JavaScript, Node.js, Claude Code Integration, Responsive Design, Rest API Integration, Swagger/Open API</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Version Control and CI/CD</div>
+                        <div class="skill-items">Git Version Control, GitHub Actions, CI/CD Workflows, Docs-as-Code Implementation, Workflow Automation</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Project Management and Collaboration</div>
+                        <div class="skill-items">Jira Project Management, Confluence, Productboard, Agile Methodologies, Scrum, Cross-functional Team Collaboration</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Operating Systems and Command Line</div>
+                        <div class="skill-items">Linux CLI Expert Level, macOS Terminal Expert Level, Windows PowerShell</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-category">Analytics and Content Strategy</div>
+                        <div class="skill-items">Content Usage Analysis, Documentation ROI Evaluation, Data-driven Content Strategies, Information Architecture</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="section professional-experience">
                 <h2 class="section-title">Professional Experience</h2>
                 
@@ -785,15 +762,14 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Responsibility for company API portal with implementation of docs-as-code practices, version control and CI/CD integration</li>
-                            <li>Development of automated converter from MadCap Flare source projects to AsciiDoc using Claude Code</li>
-                            <li>Implementation and maintenance of Vale-based style guides for consistent documentation quality</li>
-                            <li>Automation of API changelog generation using Node.js, Swagger, Eleventy and npm tools based on OpenAPI JSON</li>
-                            <li>Development of data-driven content strategy for API documentation with improved usability and information architecture</li>
-                            <li>Close collaboration with international development teams, product managers and QA for new feature documentation</li>
-                            <li>Creation and maintenance of English knowledge base (knowledge.uptempo.io) including release notes</li>
-                            <li>Recognition for consistently high work quality and proactive improvement suggestions</li>
-                            <li>Onboarding of new employees as Technical Writer and Product Manager</li>
+                            <li><strong>Team Leadership:</strong> Successfully onboarded and mentored new Technical Writer and Product Manager, establishing documentation standards and workflows for growing team</li>
+                            <li><strong>Global Stakeholder Management:</strong> Led cross-functional collaboration with teams spanning North America (all Canadian and US time zones), Eastern Europe (Bulgaria), and Asia (India), coordinating documentation priorities across 8+ time zones while maintaining rapid product development cycles</li>
+                            <li><strong>Documentation Strategy:</strong> Developed data-driven content strategy for public REST APIs, resulting in improved developer experience and measurable usability improvements</li>
+                            <li><strong>Process Innovation:</strong> Implemented company-wide docs-as-code practices with version control and CI/CD integration, transforming documentation workflow efficiency</li>
+                            <li><strong>Automation Excellence:</strong> Built automated API changelog generation system using Node.js and OpenAPI, reducing manual effort by 80% while improving accuracy</li>
+                            <li><strong>Quality Systems:</strong> Established Vale-based style guide implementation ensuring consistent documentation quality across all technical content</li>
+                            <li><strong>Developer Focus:</strong> Maintained comprehensive API portal (knowledge.uptempo.io) serving technical audiences with focus on developer experience</li>
+                            <li><strong>Recognition:</strong> Consistently praised for proactive improvement suggestions and high-quality deliverables in fast-paced environment</li>
                         </ul>
                     </div>
                 </div>
@@ -806,11 +782,11 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Creation of comprehensive documentation for Marketing Resource Management (MRM) SaaS products</li>
-                            <li>Implementation of UI key variables for MadCap Flare for higher text and translation quality</li>
-                            <li>Responsibility for terminology and UX copy (DE/EN)</li>
-                            <li>Terminology work and management of translation projects between German and English</li>
-                            <li>Collaboration with international product, enablement, QA and support teams</li>
+                            <li><strong>Technical Documentation:</strong> Created comprehensive documentation for complex Marketing Resource Management SaaS products with Camunda engine and BPMN workflows for developer audiences</li>
+                            <li><strong>Global Team Management:</strong> Successfully managed and collaborated with distributed teams across North America (all Canadian and US time zones), Europe (Bulgaria, CET+1), and Asia (India, CET+5.5), demonstrating expertise in asynchronous communication and cross-timezone project coordination</li>
+                            <li><strong>Content Strategy:</strong> Led terminology management and translation projects between German and English, ensuring consistent global documentation experience</li>
+                            <li><strong>Process Improvement:</strong> Implemented UI key variables system in MadCap Flare, significantly improving translation quality and content consistency</li>
+                            <li><strong>Cross-functional Impact:</strong> Collaborated closely with UX teams on copy optimization, demonstrating understanding of user experience principles</li>
                         </ul>
                     </div>
                 </div>
@@ -823,9 +799,9 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Technical documentation for special machine construction, PLC systems (Siemens TIA) and medical technology</li>
-                            <li>Creation of operating instructions according to Machinery Directive 2006/42/EC</li>
-                            <li>Documentation of complex technical systems and processes</li>
+                            <li><strong>Complex Systems Documentation:</strong> Created technical documentation for special machine construction and PLC systems, demonstrating ability to understand and document complex technical products</li>
+                            <li><strong>Regulatory Compliance:</strong> Developed operating instructions, safety documentation for gloveboxes, including risk assessments and regulatory safety notices, meeting Machinery Directive 2006/42/EC standards, showing attention to detail and compliance requirements</li>
+                            <li><strong>Technical Depth:</strong> Successfully documented medical technology systems, proving adaptability to different technical domains</li>
                         </ul>
                     </div>
                 </div>
@@ -838,29 +814,12 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Documentation for "AHP Enterprise Cloud" platform</li>
-                            <li>Creation of administrator manuals and technical guides</li>
-                            <li>Collaboration with cloud architects and development teams</li>
+                            <li><strong>Cloud Platform Documentation:</strong> Developed administrator manuals and technical guides for "AHP Enterprise Cloud" platform</li>
+                            <li><strong>Engineering Collaboration:</strong> Worked directly with cloud architects and development teams to create accurate, developer-focused documentation</li>
                         </ul>
                     </div>
                 </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="company-name">Freelance Work</div>
-                        <div class="job-title">Document Management Administrator</div>
-                        <div class="job-meta">March 2017 - October 2018</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Administration of Relativity e-Discovery software for forensic data analysis</li>
-                            <li>Creation of complex search queries, tagging and batch processing of documents</li>
-                            <li>Compliance checking and filtering of sensitive content (classified documents) before data exports</li>
-                            <li>Support for international compliance projects in the aerospace industry</li>
-                        </ul>
-                    </div>
-                </div>
-                
+
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="company-name">censhare AG</div>
@@ -869,135 +828,53 @@
                     </div>
                     <div class="job-description">
                         <ul>
-                            <li>Creation of comprehensive technical documentation for an Enterprise Content Management System</li>
-                            <li>Implementation and optimisation of documentation workflows</li>
-                            <li>Expert product knowledge through intensive testing of all procedures and workflows</li>
-                            <li>Direct collaboration with Scrum teams, UX experts and project managers</li>
-                            <li>Leading role in improving the information architecture of the documentation site</li>
-                            <li>Conducting black-box, usability and user acceptance tests</li>
+                            <li><strong>Team Collaboration:</strong> Worked directly with Scrum teams, UX experts, and project managers in agile development environment</li>
+                            <li><strong>Information Architecture:</strong> Led improvements to documentation site information architecture, demonstrating strategic thinking about content organization</li>
+                            <li><strong>Quality Leadership:</strong> Conducted comprehensive testing (black-box, usability, user acceptance) ensuring documentation accuracy and usability</li>
+                            <li><strong>Process Optimization:</strong> Implemented and optimized documentation workflows for Enterprise Content Management System</li>
+                            <li><strong>Cross-functional Expertise:</strong> Combined technical writing with QA responsibilities, showing versatility and technical understanding</li>
                         </ul>
                     </div>
                 </div>
-                
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Additional Experience</h2>
                 <div class="experience-item">
-                    <div class="job-header">
+                     <div class="job-header">
                         <div class="company-name">MACup Magazine / Neue Mediengesellschaft Ulm</div>
                         <div class="job-title">Editor</div>
-                        <div class="job-meta">Munich | January 2009 - June 2011</div>
+                        <div class="job-meta">Munich, Germany | January 2009 - June 2011</div>
                     </div>
                     <div class="job-description">
-                        <ul>
-                            <li>Responsible editor for "MACup", "iPhone & Co" and "iPad & Co" magazines</li>
-                            <li>Writing technical articles on macOS, iOS, DTP and application practice</li>
-                            <li>Conducting hardware and software tests with detailed analyses</li>
-                            <li>Daily online news reporting and content management</li>
-                            <li>Acquisition and supervision of external specialist authors</li>
-                            <li>Editorial quality assurance and proofreading</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="company-name">Earlier Positions</div>
-                        <div class="job-title">Various Roles</div>
-                        <div class="job-meta">2000 - 2008</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li><strong>Condé Nast Verlag (2007-2008):</strong> System Administrator, censhare training and DTP support</li>
-                            <li><strong>Greinwalder & Partner (2004-2006):</strong> Pre-press, proofreading and quality assurance</li>
-                            <li><strong>Freelance (2002-2004):</strong> Editor, author and translator for specialist publications</li>
-                            <li><strong>buecher.de AG (2000-2001):</strong> Online editor and content manager</li>
+                         <ul>
+                            <li>Served as responsible editor for MACup, iPhone & Co, and iPad & Co technical publications</li>
+                            <li>Conducted detailed hardware and software testing and analysis for technical audiences</li>
+                            <li>Managed editorial quality assurance and supervised external specialist authors</li>
+                            <li>Created technical articles covering macOS, iOS, desktop publishing, and application workflows</li>
+                            <li>Developed content strategy and managed daily online news reporting</li>
                         </ul>
                     </div>
                 </div>
             </div>
             
-            <!-- Technical Skills -->
-            <div class="section">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-category">Documentation Tools</div>
-                        <div class="skill-items">Vale, IntelliJ IDEA, AsciiDoc, MadCap Flare, Writerside, XML editors, Markdown, Jekyll, Eleventy, Pandoc</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Development & Web</div>
-                        <div class="skill-items">HTML, CSS, JavaScript, Node.js, Responsive Design, Claude Code Integration</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Version Control & CI/CD</div>
-                        <div class="skill-items">Git, GitHub Actions, Workflow Automation, Docs-as-Code</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Project & Task Management</div>
-                        <div class="skill-items">Jira, Confluence, Productboard, Agile Collaboration</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Operating Systems</div>
-                        <div class="skill-items">Excellent Linux and macOS CLI expertise, Windows PowerShell basics</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-category">Analytics & Metrics</div>
-                        <div class="skill-items">Content usage analysis, ROI evaluation of technical documentation</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Two columns section -->
             <div class="two-columns">
                 <div>
                     <div class="section">
-                        <h2 class="section-title">Education & Training</h2>
+                        <h2 class="section-title">Education and Certifications</h2>
                         <div class="education-item">
-                            <div class="job-title">Ludwig Maximilian University Munich</div>
-                            <div class="job-meta">Modern German Literature, English Studies | 1993 - 1998</div>
+                            <div class="job-title">University Education</div>
+                            <div class="job-meta">Ludwig Maximilian University Munich - Modern German Literature, English Studies</div>
                         </div>
                         <div class="education-item">
-                            <div class="job-title">Bookseller Apprenticeship</div>
-                            <div class="job-meta">Completed Professional Training (IHK) | 1988 - 1991</div>
+                            <div class="job-title">Vocational Training</div>
+                            <div class="job-meta">Bookseller Apprenticeship (IHK, Kassel)</div>
                         </div>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">Publications</h2>
+                        <h3 style="font-size: 11pt; font-weight: 600; margin-top: 20px; margin-bottom: 10px;">Professional Certifications (2023-2025)</h3>
                         <ul class="cert-list">
-                            <li><strong>iLife '08 – Kreativität am Mac für alle</strong> (2008)<br>
-                                ISBN 3908497639, Pfäffikon</li>
-                            <li><strong>iTunes-7-Trickkiste</strong> (2007)<br>
-                                E-Book at eload24.com, Baar</li>
-                            <li><strong>iLife '06</strong> (2006)<br>
-                                ISBN 3908497361, Pfäffikon</li>
-                            <li><strong>Mac OS X 10.4 für Power-User und Administratoren</strong> (2005)<br>
-                                ISBN 3908497213, Pfäffikon</li>
-                            <li><strong>Das Mac OS X-Buch</strong> (2003)<br>
-                                ISBN 3907020553, Zurich</li>
-                            <li><strong>Insiderbuch Photoshop 7</strong> (2003)<br>
-                                Translation and adaptation, ISBN 3907020359, Zurich</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">Languages</h2>
-                        <div class="language-item">
-                            <span>German</span>
-                            <span>Native</span>
-                        </div>
-                        <div class="language-item">
-                            <span>English</span>
-                            <span>Fluent (C1/C2)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <div class="section">
-                        <h2 class="section-title">Current Certifications</h2>
-                        <ul class="cert-list">
-                            <li>AI-Driven Software Development with OpenAI's Canvas (2025)</li>
-                            <li>The Power of Accurate Prompting with Anthropic's Claude (2024)</li>
-                            <li>GitHub Actions with Python: Fundamentals (2024)</li>
+                            <li>AI-Driven Software Development with OpenAI Canvas (2025)</li>
+                            <li>The Power of Accurate Prompting with Anthropic Claude (2024)</li>
+                            <li>GitHub Actions with Python Fundamentals (2024)</li>
                             <li>UX Writing Fundamentals (2023)</li>
                             <li>Agile Project Management Practitioner (2023)</li>
                             <li>AI Skills for Technical Leaders (2023)</li>
@@ -1005,24 +882,46 @@
                     </div>
                     
                     <div class="section">
-                        <h2 class="section-title">Strengths</h2>
+                        <h2 class="section-title">Languages</h2>
+                        <div class="language-item">
+                            <span>German</span>
+                            <span>Native Speaker</span>
+                        </div>
+                        <div class="language-item">
+                            <span>English</span>
+                            <span>Fluent Business Level (C1/C2)</span>
+                        </div>
+                        <p style="font-size: 9pt; color: #555; padding-left: 8px; margin-top: 5px;">Extensive International Business Communication Experience</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="section">
+                        <h2 class="section-title">Publications</h2>
+                        <p style="font-size: 10pt; color: #555; margin-bottom: 10px;">Technical Books (2003-2008)</p>
                         <ul class="cert-list">
-                            <li>Exceptional attention to detail combined with technical competence</li>
-                            <li>Expertise in process optimisation and workflow automation</li>
-                            <li>Strong analytical and research skills</li>
-                            <li>Quick familiarisation with new tools and technologies</li>
-                            <li>Diverse professional experience demonstrates high adaptability</li>
+                            <li><strong>Mac OS X 10.4 für Power-User und Administratoren</strong> (2005)<br>
+                                ISBN 3908497213</li>
+                            <li><strong>Das Mac OS X-Buch</strong> (2003)<br>
+                                ISBN 3907020553</li>
+                            <li><strong>iLife '08 – Kreativität am Mac für alle</strong> (2008)<br>
+                                ISBN 3908497639</li>
+                            <li><strong>iTunes-7-Trickkiste</strong> (2007)<br>
+                                E-Book publication</li>
+                            <li><strong>Insiderbuch Photoshop 7</strong> (2003)<br>
+                                Translation and adaptation project</li>
                         </ul>
                     </div>
-
+                    
                     <div class="section">
-                        <h2 class="section-title">Leadership Skills</h2>
+                        <h2 class="section-title">Additional Qualifications</h2>
                         <ul class="cert-list">
-                            <li><strong>Mentoring:</strong> Knowledge transfer and onboarding of new team members</li>
-                            <li><strong>Process Leadership:</strong> Establishing standards and best practices</li>
-                            <li><strong>Stakeholder Management:</strong> Successful coordination between development, product and UX</li>
-                            <li><strong>Strategic Planning:</strong> Development of data-driven content strategies</li>
-                            <li><strong>Change Management:</strong> Implementation of new tools and workflows</li>
+                            <li>Content Usage Analysis and Documentation ROI Evaluation</li>
+                            <li>Information Architecture and User Experience Design</li>
+                            <li>International Team Collaboration and Cross-timezone Communication</li>
+                            <li>Process Automation and Workflow Optimization</li>
+                            <li>Regulatory Compliance Documentation (EU Machinery Directive)</li>
+                            <li>Technical Translation Management (German/English)</li>
                         </ul>
                     </div>
                 </div>
