@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Luzie Labor">
+<title>Luzie Laborverlauf</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html,body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;background:#f2f2f7;color:#1c1c1e;min-height:100vh}
+header{background:#fff;border-bottom:0.5px solid #c6c6c8;padding:14px 16px 10px;position:sticky;top:0;z-index:10}
+header h1{font-size:17px;font-weight:600}
+header p{font-size:12px;color:#8e8e93;margin-top:2px}
+.tabs{display:flex;overflow-x:auto;background:#fff;border-bottom:0.5px solid #c6c6c8;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:10px 16px;font-size:13px;color:#8e8e93;border:none;background:transparent;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+.tab.active{color:#007aff;border-bottom-color:#007aff;font-weight:500}
+.legend{display:flex;flex-wrap:wrap;gap:12px;padding:8px 16px;font-size:11px;color:#8e8e93}
+.leg{display:flex;align-items:center;gap:4px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.panel{display:none;padding:12px 16px 32px}
+.panel.active{display:block}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.card{background:#fff;border-radius:10px;padding:10px 12px}
+.card-label{font-size:11px;color:#8e8e93;margin-bottom:2px}
+.card-val{font-size:20px;font-weight:600}
+.card-ref{font-size:10px;color:#8e8e93;margin-top:1px}
+.lo{color:#dc2626}.hi{color:#b45309}
+.svg-wrap{background:#fff;border-radius:10px;padding:8px;margin-bottom:8px}
+.svg-wrap svg{display:block;width:100%;overflow:visible}
+.note{font-size:11px;color:#8e8e93;margin:4px 0 0 2px}
+.tipbox{background:rgba(28,28,30,0.92);color:#fff;border-radius:8px;padding:7px 11px;font-size:12px;line-height:1.6;pointer-events:none;position:fixed;display:none;z-index:200;white-space:nowrap}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
+thead tr{background:#f2f2f7}
+th{padding:7px 8px;text-align:left;font-size:11px;font-weight:600;color:#8e8e93;border-bottom:0.5px solid #c6c6c8;white-space:nowrap}
+th.r,td.r{text-align:right}
+td{padding:8px;border-bottom:0.5px solid #f2f2f7;font-size:12px;color:#1c1c1e}
+tr:last-child td{border-bottom:none}
+.tlo{color:#dc2626;font-weight:500}.thi{color:#b45309;font-weight:500}.tok{color:#1d6abf}
+.sn{font-size:12px;color:#8e8e93;margin:0 0 8px}
+</style>
+</head>
+<body>
+
+<div class="tipbox" id="tipbox"></div>
+
+<header>
+  <h1>Luzie &ndash; Laborverlauf</h1>
+  <p>BKH, 16 J. &middot; CNE IRIS Stage 3 &middot; Renale An&auml;mie</p>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('anamie',this)">An&auml;mie</button>
+  <button class="tab" onclick="showTab('retik',this)">Retikulozyten</button>
+  <button class="tab" onclick="showTab('niere',this)">Niere</button>
+  <button class="tab" onclick="showTab('elektro',this)">Elektrolyte</button>
+  <button class="tab" onclick="showTab('urin',this)">Urin</button>
+  <button class="tab" onclick="showTab('gas',this)">Blutgas</button>
+</div>
+
+<div class="legend">
+  <span class="leg"><span class="dot" style="background:#dc2626"></span>unter Ref.</span>
+  <span class="leg"><span class="dot" style="background:#1d6abf"></span>im Ref.-Bereich</span>
+  <span class="leg"><span class="dot" style="background:#b45309"></span>&uuml;ber Ref.</span>
+</div>
+
+<div id="panel-anamie" class="panel active">
+  <div class="cards">
+    <div class="card"><div class="card-label">Hkt 31.03.</div><div class="card-val lo">0,238</div><div class="card-ref">Ref 0,28&ndash;0,53</div></div>
+    <div class="card"><div class="card-label">Hgb 31.03.</div><div class="card-val lo">78 g/L</div><div class="card-ref">Ref 103&ndash;162</div></div>
+    <div class="card"><div class="card-label">RBC 31.03.</div><div class="card-val lo">5,51</div><div class="card-ref">Ref 7,1&ndash;11,5</div></div>
+  </div>
+  <div class="svg-wrap" id="svg-anamie"></div>
+  <div class="note">Hkt &times;10, Hgb &divide;10 zur gemeinsamen Darstellung skaliert</div>
+</div>
+
+<div id="panel-retik" class="panel">
+  <div class="cards2">
+    <div class="card"><div class="card-label">Ret-Hb 31.03.</div><div class="card-val lo">11,8 pg</div><div class="card-ref">Ref 15,3&ndash;22,9</div></div>
+    <div class="card"><div class="card-label">Retik 31.03.</div><div class="card-val hi">33 K/&micro;L</div><div class="card-ref">Ziel &gt;50 bei An&auml;mie</div></div>
+  </div>
+  <div class="svg-wrap" id="svg-retik"></div>
+  <div class="note">Ret-Hb &darr; trotz Darbepoetin &rarr; funktioneller Eisenmangel</div>
+</div>
+
+<div id="panel-niere" class="panel">
+  <div class="cards2">
+    <div class="card"><div class="card-label">SDMA 31.03.</div><div class="card-val hi">33 &micro;g/dL</div><div class="card-ref">Ref 0&ndash;14</div></div>
+    <div class="card"><div class="card-label">Kreatinin 31.03.</div><div class="card-val hi">274 &micro;mol/L</div><div class="card-ref">Ref 80&ndash;203</div></div>
+  </div>
+  <div class="svg-wrap" id="svg-niere"></div>
+  <div class="note">Kreatinin &divide;10 zur gemeinsamen Darstellung skaliert</div>
+</div>
+
+<div id="panel-elektro" class="panel">
+  <div class="svg-wrap" id="svg-elektro"></div>
+</div>
+
+<div id="panel-urin" class="panel">
+  <p class="sn">Befund vom 12.03.2026</p>
+  <table>
+    <thead><tr><th>Parameter</th><th class="r">Wert</th><th class="r">Befund</th></tr></thead>
+    <tbody>
+      <tr><td>Spez. Gewicht</td><td class="r tlo">1,012</td><td class="r tlo">Isosthenurie</td></tr>
+      <tr><td>pH</td><td class="r tok">6,0</td><td class="r tok">normal</td></tr>
+      <tr><td>Eiwei&szlig;</td><td class="r thi">+</td><td class="r thi">erh&ouml;ht</td></tr>
+      <tr><td>Blut</td><td class="r thi">++++</td><td class="r thi">stark erh&ouml;ht</td></tr>
+      <tr><td>Leukozyten</td><td class="r thi">&gt;50/HPF</td><td class="r thi">Py&uuml;rie</td></tr>
+      <tr><td>Erythrozyten</td><td class="r thi">15/HPF</td><td class="r thi">H&auml;maturie</td></tr>
+      <tr><td>Bakterien</td><td class="r thi">+ St&auml;bchen</td><td class="r thi">Bakteriurie</td></tr>
+      <tr><td>Glukose</td><td class="r tok">neg</td><td class="r tok">normal</td></tr>
+      <tr><td>Ketonk&ouml;rper</td><td class="r tok">neg</td><td class="r tok">normal</td></tr>
+      <tr><td>UPC</td><td class="r thi">1,77</td><td class="r thi">hgr. Proteinurie</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="panel-gas" class="panel">
+  <p class="sn">Befund vom 12.03.2026</p>
+  <table>
+    <thead><tr><th>Parameter</th><th class="r">Wert</th><th class="r">Ref.</th><th class="r">Befund</th></tr></thead>
+    <tbody>
+      <tr><td>pH (ven&ouml;s)</td><td class="r tlo">7,254</td><td class="r">7,34&ndash;7,44</td><td class="r tlo">Azidose</td></tr>
+      <tr><td>cHCO3 (mmol/L)</td><td class="r tlo">18,4</td><td class="r">19&ndash;24</td><td class="r tlo">erniedrigt</td></tr>
+      <tr><td>cBE(vv) (mmol/L)</td><td class="r tlo">-7</td><td class="r">-2,5&ndash;2,5</td><td class="r tlo">met. Azidose</td></tr>
+      <tr><td>cAnGap (mmol/L)</td><td class="r thi">24,4</td><td class="r">~12&ndash;20</td><td class="r thi">High-AG</td></tr>
+      <tr><td>Laktat (mmol/L)</td><td class="r thi">2,52</td><td class="r">0&ndash;2,5</td><td class="r thi">grenzwertig</td></tr>
+      <tr><td>PCO2 (mmHg)</td><td class="r tok">46,6</td><td class="r">29&ndash;51</td><td class="r tok">normal</td></tr>
+      <tr><td>Natrium (mmol/L)</td><td class="r tok">156,7</td><td class="r">146&ndash;158</td><td class="r tok">normal</td></tr>
+      <tr><td>Kalium (mmol/L)</td><td class="r tok">3,91</td><td class="r">3,0&ndash;5,0</td><td class="r tok">normal</td></tr>
+      <tr><td>cHkt</td><td class="r tlo">0,20</td><td class="r">0,30&ndash;0,44</td><td class="r tlo">An&auml;mie</td></tr>
+      <tr><td>Hb gesamt (mmol/L)</td><td class="r tlo">4,3</td><td class="r">5,6&ndash;9,3</td><td class="r tlo">erniedrigt</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+var LABELS = ['Okt 25','Mrz 07','Mrz 12','Mrz 31'];
+var DATES  = ['18.10.2025','07.03.2026','12.03.2026','31.03.2026'];
+
+var CHARTS = {
+  anamie: { datasets: [
+    {label:'Hkt x10',      data:[4.49,2.64,2.08,2.38], lo:2.82,hi:5.27,  color:'#dc2626',unit:''},
+    {label:'Hgb /10',      data:[13.0,8.6,6.7,7.8],    lo:10.3,hi:16.2,  color:'#b45309',unit:''},
+    {label:'RBC x10^12/L', data:[9.53,5.65,4.5,5.51],  lo:7.1, hi:11.5,  color:'#1d6abf',unit:''}
+  ]},
+  retik: {
+    bands:[{min:15.3,max:22.9,fill:'rgba(124,92,191,0.10)'},{min:0,max:50,fill:'rgba(29,158,117,0.07)'}],
+    datasets: [
+      {label:'Ret-Hb',      data:[15.5,16.0,16.7,11.8],   lo:15.3,hi:22.9,color:'#7c5cbf',unit:' pg'},
+      {label:'Retik abs.',  data:[28.59,16.95,16.2,33.06], lo:0,   hi:50,  color:'#1d9e75',unit:' K/uL'}
+    ]},
+  niere: { datasets: [
+    {label:'SDMA',    data:[16,40,40,33],             lo:0,   hi:14,   color:'#dc2626',unit:' ug/dL'},
+    {label:'Krea/10', data:[20.33,38.9,30.1,27.4],    lo:7.9, hi:20.3, color:'#b45309',unit:''},
+    {label:'BUN',     data:[13.57,27.13,20.86,23.92], lo:5.71,hi:13.57,color:'#1d6abf',unit:' mmol/L'},
+    {label:'Phos',    data:[2.0,1.9,1.31,1.7],        lo:0.8, hi:2.2,  color:'#1d9e75',unit:' mmol/L'}
+  ]},
+  elektro: { datasets: [
+    {label:'Natrium', data:[158,152,155.2,155], lo:147,hi:159,color:'#1d6abf',unit:' mmol/L'},
+    {label:'Kalium',  data:[5.4,3.8,4.5,4.4],  lo:3.3,hi:5.8, color:'#b45309',unit:' mmol/L'},
+    {label:'Calcium', data:[2.5,2.6,2.65,2.6], lo:2.2,hi:2.9, color:'#1d9e75',unit:' mmol/L'},
+    {label:'Albumin', data:[32,31,34,34],       lo:27, hi:44,  color:'#7c5cbf', unit:' g/L'}
+  ]}
+};
+
+var NS = 'http://www.w3.org/2000/svg';
+
+function el(tag, attrs) {
+  var e = document.createElementNS(NS, tag);
+  for (var k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+
+function ptColor(v,lo,hi){ return v<lo?'#dc2626':v>hi?'#b45309':'#1d6abf'; }
+function statusText(v,lo,hi){ return v<lo?'unter Ref.':v>hi?'ueber Ref.':'im Ref.-Bereich'; }
+
+function buildChart(name) {
+  var cfg = CHARTS[name];
+  var wrap = document.getElementById('svg-'+name);
+  if (!cfg||!wrap) return;
+
+  var VW=340, VH=240;
+  var PL=46,PR=10,PT=28,PB=36;
+  var cw=VW-PL-PR, ch=VH-PT-PB;
+  var n=LABELS.length;
+
+  var all=[];
+  cfg.datasets.forEach(function(ds){ ds.data.forEach(function(v){ if(v!==null) all.push(v); }); });
+  var mn=Math.min.apply(null,all), mx=Math.max.apply(null,all), rng=mx-mn||1;
+  mn-=rng*0.13; mx+=rng*0.13; rng=mx-mn;
+
+  function xp(i){ return PL+(i/(n-1))*cw; }
+  function yp(v){ return PT+ch-((v-mn)/rng)*ch; }
+
+  var svg = el('svg',{viewBox:'0 0 '+VW+' '+VH,'xmlns':NS});
+
+  // grid
+  for(var s=0;s<=4;s++){
+    var yv=mn+(rng/4)*s, yy=yp(yv);
+    var gl=el('line',{x1:PL,y1:yy,x2:PL+cw,y2:yy,stroke:'rgba(0,0,0,0.08)',  'stroke-width':'0.5'});
+    svg.appendChild(gl);
+    var yt=el('text',{x:PL-4,y:yy+3,'text-anchor':'end','font-size':'9','fill':'#8e8e93','font-family':'-apple-system,sans-serif'});
+    yt.textContent=yv.toFixed(1);
+    svg.appendChild(yt);
+  }
+
+  // x labels
+  LABELS.forEach(function(l,i){
+    var xt=el('text',{x:xp(i),y:VH-PB+14,'text-anchor':'middle','font-size':'10','fill':'#8e8e93','font-family':'-apple-system,sans-serif'});
+    xt.textContent=l; svg.appendChild(xt);
+  });
+
+  // ref bands
+  if(cfg.bands){ cfg.bands.forEach(function(b){
+    var y1=yp(Math.min(b.max,mx)), y2=yp(Math.max(b.min,mn));
+    svg.appendChild(el('rect',{x:PL,y:y1,width:cw,height:Math.abs(y2-y1),fill:b.fill}));
+  });}
+
+  // lines
+  cfg.datasets.forEach(function(ds){
+    var pts=[];
+    ds.data.forEach(function(v,i){ if(v!==null) pts.push(xp(i)+','+yp(v)); });
+    if(pts.length>1){
+      svg.appendChild(el('polyline',{points:pts.join(' '),fill:'none',stroke:ds.color,'stroke-width':'2','stroke-linejoin':'round'}));
+    }
+  });
+
+  // visible dots
+  cfg.datasets.forEach(function(ds){
+    ds.data.forEach(function(v,i){
+      if(v===null)return;
+      var x=xp(i), y=yp(v), pc=ptColor(v,ds.lo,ds.hi);
+      svg.appendChild(el('circle',{cx:x,cy:y,r:6,fill:pc,stroke:'#fff','stroke-width':'2'}));
+    });
+  });
+
+  // single overlay rect catches all touches for this chart
+  var overlay=el('rect',{x:PL,y:0,width:cw,height:VH,fill:'transparent',style:'cursor:pointer'});
+  svg.appendChild(overlay);
+
+  // store point coords for hit testing
+  var points=[];
+  cfg.datasets.forEach(function(ds){
+    ds.data.forEach(function(v,i){
+      if(v!==null) points.push({ds:ds,v:v,i:i,sx:xp(i),sy:yp(v)});
+    });
+  });
+
+  function findNearest(svgX,svgY){
+    var best=null,bd=9999;
+    points.forEach(function(p){
+      var d=Math.sqrt((svgX-p.sx)*(svgX-p.sx)+(svgY-p.sy)*(svgY-p.sy));
+      if(d<bd){bd=d;best=p;}
+    });
+    return bd<40?best:null;
+  }
+
+  function svgCoords(clientX,clientY){
+    var rect=svg.getBoundingClientRect();
+    var scaleX=VW/rect.width, scaleY=VH/rect.height;
+    return {x:(clientX-rect.left)*scaleX, y:(clientY-rect.top)*scaleY};
+  }
+
+  overlay.addEventListener('touchend',function(e){
+    e.preventDefault();
+    var t=e.changedTouches[0];
+    var sc=svgCoords(t.clientX,t.clientY);
+    var p=findNearest(sc.x,sc.y);
+    if(p) showTip(p.ds,p.v,p.i,t.clientX,t.clientY);
+    else document.getElementById('tipbox').style.display='none';
+  },{passive:false});
+
+  overlay.addEventListener('click',function(e){
+    var sc=svgCoords(e.clientX,e.clientY);
+    var p=findNearest(sc.x,sc.y);
+    if(p) showTip(p.ds,p.v,p.i,e.clientX,e.clientY);
+    else document.getElementById('tipbox').style.display='none';
+  });
+
+  // legend
+  var lx=PL, ly=PT-14;
+  cfg.datasets.forEach(function(ds){
+    var lr=el('rect',{x:lx,y:ly-8,width:10,height:10,fill:ds.color,rx:'2'});
+    svg.appendChild(lr);
+    var lt=el('text',{x:lx+13,y:ly+1,'font-size':'9','fill':'#1c1c1e','font-family':'-apple-system,sans-serif'});
+    lt.textContent=ds.label; svg.appendChild(lt);
+    lx+=ds.label.length*5.5+20;
+    if(lx>VW-40){lx=PL;ly-=13;}
+  });
+
+  wrap.innerHTML='';
+  wrap.appendChild(svg);
+}
+
+var tipTimeout;
+function showTip(ds,v,i,cx,cy){
+  var tip=document.getElementById('tipbox');
+  clearTimeout(tipTimeout);
+  var st=statusText(v,ds.lo,ds.hi);
+  tip.innerHTML='<b>'+ds.label+'</b><br>'+DATES[i]+'<br>'+v.toFixed(2)+(ds.unit||'')+'<br><span style="opacity:0.75">Ref: '+ds.lo+'&ndash;'+ds.hi+(ds.unit||'')+'</span><br><span style="opacity:0.75">'+st+'</span>';
+  tip.style.display='block';
+  var tw=tip.offsetWidth||150, th=tip.offsetHeight||80;
+  var left=cx+12; if(left+tw>window.innerWidth-8) left=cx-tw-12;
+  var top=cy-th-10; if(top<8) top=cy+14;
+  tip.style.left=left+'px'; tip.style.top=top+'px';
+  tipTimeout=setTimeout(function(){tip.style.display='none';},3000);
+}
+
+document.addEventListener('touchend',function(e){
+  if(!e.target.getAttribute('data-name')){
+    document.getElementById('tipbox').style.display='none';
+  }
+});
+document.addEventListener('click',function(e){
+  if(!e.target.getAttribute('data-name')){
+    document.getElementById('tipbox').style.display='none';
+  }
+});
+
+function showTab(name, btn) {
+  document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('tipbox').style.display='none';
+  btn.classList.add('active');
+  document.getElementById('panel-'+name).classList.add('active');
+  if(CHARTS[name]){
+    buildChart(name);
+  }
+}
+
+// build all charts on load - SVG has no clientWidth dependency
+window.addEventListener('DOMContentLoaded',function(){
+  ['anamie','retik','niere','elektro'].forEach(function(n){ buildChart(n); });
+});
+</script>
+</body>
+</html>
