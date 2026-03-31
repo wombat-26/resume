@@ -30,7 +30,7 @@ header p{font-size:12px;color:#8e8e93;margin-top:2px}
 .card-ref{font-size:10px;color:#8e8e93;margin-top:1px}
 .lo{color:#dc2626}.hi{color:#b45309}
 .chart{background:#fff;border-radius:10px;padding:10px 10px 4px;margin-bottom:8px;position:relative;user-select:none;-webkit-user-select:none}
-.chart-inner{position:relative;width:100%;height:220px;margin-left:36px}
+.chart-inner{position:relative;width:100%;height:220px;margin-left:36px;overflow:visible}
 .chart-svg{position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;pointer-events:none}
 .yaxis{position:absolute;top:0;left:-36px;width:34px;height:100%;pointer-events:none}
 .yaxis span{position:absolute;right:2px;font-size:9px;color:#8e8e93;transform:translateY(-50%)}
@@ -222,7 +222,7 @@ function buildChart(name) {
   mn -= rng*0.15; mx += rng*0.15; rng = mx-mn;
 
   function pct(v){ return (1 - (v-mn)/rng) * 100; }
-  function xpct(i){ return (i / (LABELS.length-1)) * 100; }
+  var XINSET=6; function xpct(i){ return XINSET + (i/(LABELS.length-1))*(100-2*XINSET); }
 
   // wrapper
   var wrap = document.createElement('div');
