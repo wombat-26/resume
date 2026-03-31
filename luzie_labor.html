@@ -9,7 +9,7 @@
 <title>Luzie Laborverlauf</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
-html,body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;background:#f2f2f7;color:#1c1c1e;min-height:100vh}
+html,body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;background:#f2f2f7;color:#1c1c1e}
 header{background:#fff;border-bottom:0.5px solid #c6c6c8;padding:14px 16px 10px;position:sticky;top:0;z-index:10}
 header h1{font-size:17px;font-weight:600}
 header p{font-size:12px;color:#8e8e93;margin-top:2px}
@@ -29,10 +29,22 @@ header p{font-size:12px;color:#8e8e93;margin-top:2px}
 .card-val{font-size:20px;font-weight:600}
 .card-ref{font-size:10px;color:#8e8e93;margin-top:1px}
 .lo{color:#dc2626}.hi{color:#b45309}
-.svg-wrap{background:#fff;border-radius:10px;padding:8px;margin-bottom:8px}
-.svg-wrap svg{display:block;width:100%;overflow:visible}
-.note{font-size:11px;color:#8e8e93;margin:4px 0 0 2px}
-.tipbox{background:rgba(28,28,30,0.92);color:#fff;border-radius:8px;padding:7px 11px;font-size:12px;line-height:1.6;pointer-events:none;position:fixed;display:none;z-index:200;white-space:nowrap}
+.chart{background:#fff;border-radius:10px;padding:10px 10px 4px;margin-bottom:8px;position:relative;user-select:none;-webkit-user-select:none}
+.chart-inner{position:relative;width:100%;height:220px;margin-left:36px}
+.chart-svg{position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.yaxis{position:absolute;top:0;left:-36px;width:34px;height:100%;pointer-events:none}
+.yaxis span{position:absolute;right:2px;font-size:9px;color:#8e8e93;transform:translateY(-50%)}
+.xlabels{display:flex;justify-content:space-between;margin-left:36px;padding:4px 0 2px}
+.xlabels span{font-size:10px;color:#8e8e93;text-align:center;flex:1}
+.pt{position:absolute;width:28px;height:28px;border-radius:50%;margin-left:-14px;margin-top:-14px;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center}
+.pt-dot{width:12px;height:12px;border-radius:50%;border:2px solid #fff;pointer-events:none}
+.note{font-size:11px;color:#8e8e93;margin:2px 0 6px 2px}
+.legend-row{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 4px;font-size:11px;color:#8e8e93}
+.legend-row span{display:flex;align-items:center;gap:4px}
+.legend-row b{width:10px;height:10px;border-radius:2px;display:inline-block;flex-shrink:0}
+.popup{position:fixed;background:rgba(28,28,30,0.94);color:#fff;border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.6;z-index:100;display:none;max-width:200px;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.popup-title{font-weight:600;font-size:14px}
+.popup-sub{opacity:0.75;font-size:11px}
 table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
 thead tr{background:#f2f2f7}
 th{padding:7px 8px;text-align:left;font-size:11px;font-weight:600;color:#8e8e93;border-bottom:0.5px solid #c6c6c8;white-space:nowrap}
@@ -45,7 +57,13 @@ tr:last-child td{border-bottom:none}
 </head>
 <body>
 
-<div class="tipbox" id="tipbox"></div>
+<div class="popup" id="popup">
+  <div class="popup-title" id="p-title"></div>
+  <div id="p-date"></div>
+  <div id="p-val"></div>
+  <div class="popup-sub" id="p-ref"></div>
+  <div class="popup-sub" id="p-status"></div>
+</div>
 
 <header>
   <h1>Luzie &ndash; Laborverlauf</h1>
@@ -73,7 +91,7 @@ tr:last-child td{border-bottom:none}
     <div class="card"><div class="card-label">Hgb 31.03.</div><div class="card-val lo">78 g/L</div><div class="card-ref">Ref 103&ndash;162</div></div>
     <div class="card"><div class="card-label">RBC 31.03.</div><div class="card-val lo">5,51</div><div class="card-ref">Ref 7,1&ndash;11,5</div></div>
   </div>
-  <div class="svg-wrap" id="svg-anamie"></div>
+  <div id="chart-anamie"></div>
   <div class="note">Hkt &times;10, Hgb &divide;10 zur gemeinsamen Darstellung skaliert</div>
 </div>
 
@@ -82,8 +100,8 @@ tr:last-child td{border-bottom:none}
     <div class="card"><div class="card-label">Ret-Hb 31.03.</div><div class="card-val lo">11,8 pg</div><div class="card-ref">Ref 15,3&ndash;22,9</div></div>
     <div class="card"><div class="card-label">Retik 31.03.</div><div class="card-val hi">33 K/&micro;L</div><div class="card-ref">Ziel &gt;50 bei An&auml;mie</div></div>
   </div>
-  <div class="svg-wrap" id="svg-retik"></div>
-  <div class="note">Ret-Hb &darr; trotz Darbepoetin &rarr; funktioneller Eisenmangel</div>
+  <div id="chart-retik"></div>
+  <div class="note">Ret-Hb &darr; trotz Darbepoetin &rarr; funkt. Eisenmangel</div>
 </div>
 
 <div id="panel-niere" class="panel">
@@ -91,12 +109,12 @@ tr:last-child td{border-bottom:none}
     <div class="card"><div class="card-label">SDMA 31.03.</div><div class="card-val hi">33 &micro;g/dL</div><div class="card-ref">Ref 0&ndash;14</div></div>
     <div class="card"><div class="card-label">Kreatinin 31.03.</div><div class="card-val hi">274 &micro;mol/L</div><div class="card-ref">Ref 80&ndash;203</div></div>
   </div>
-  <div class="svg-wrap" id="svg-niere"></div>
+  <div id="chart-niere"></div>
   <div class="note">Kreatinin &divide;10 zur gemeinsamen Darstellung skaliert</div>
 </div>
 
 <div id="panel-elektro" class="panel">
-  <div class="svg-wrap" id="svg-elektro"></div>
+  <div id="chart-elektro"></div>
 </div>
 
 <div id="panel-urin" class="panel">
@@ -138,8 +156,8 @@ tr:last-child td{border-bottom:none}
 </div>
 
 <script>
+var DATES = ['18.10.2025','07.03.2026','12.03.2026','31.03.2026'];
 var LABELS = ['Okt 25','Mrz 07','Mrz 12','Mrz 31'];
-var DATES  = ['18.10.2025','07.03.2026','12.03.2026','31.03.2026'];
 
 var CHARTS = {
   anamie: { datasets: [
@@ -148,10 +166,10 @@ var CHARTS = {
     {label:'RBC x10^12/L', data:[9.53,5.65,4.5,5.51],  lo:7.1, hi:11.5,  color:'#1d6abf',unit:''}
   ]},
   retik: {
-    bands:[{min:15.3,max:22.9,fill:'rgba(124,92,191,0.10)'},{min:0,max:50,fill:'rgba(29,158,117,0.07)'}],
+    bands:[{min:15.3,max:22.9,color:'rgba(124,92,191,0.10)'},{min:0,max:50,color:'rgba(29,158,117,0.07)'}],
     datasets: [
-      {label:'Ret-Hb',      data:[15.5,16.0,16.7,11.8],   lo:15.3,hi:22.9,color:'#7c5cbf',unit:' pg'},
-      {label:'Retik abs.',  data:[28.59,16.95,16.2,33.06], lo:0,   hi:50,  color:'#1d9e75',unit:' K/uL'}
+      {label:'Ret-Hb',     data:[15.5,16.0,16.7,11.8],   lo:15.3,hi:22.9,color:'#7c5cbf',unit:' pg'},
+      {label:'Retik abs.', data:[28.59,16.95,16.2,33.06], lo:0,   hi:50,  color:'#1d9e75',unit:' K/uL'}
     ]},
   niere: { datasets: [
     {label:'SDMA',    data:[16,40,40,33],             lo:0,   hi:14,   color:'#dc2626',unit:' ug/dL'},
@@ -167,174 +185,188 @@ var CHARTS = {
   ]}
 };
 
-var NS = 'http://www.w3.org/2000/svg';
-
-function el(tag, attrs) {
-  var e = document.createElementNS(NS, tag);
-  for (var k in attrs) e.setAttribute(k, attrs[k]);
-  return e;
-}
-
 function ptColor(v,lo,hi){ return v<lo?'#dc2626':v>hi?'#b45309':'#1d6abf'; }
 function statusText(v,lo,hi){ return v<lo?'unter Ref.':v>hi?'ueber Ref.':'im Ref.-Bereich'; }
 
+var popTimer;
+function showPopup(ds, v, i, el) {
+  clearTimeout(popTimer);
+  var pop = document.getElementById('popup');
+  document.getElementById('p-title').textContent = ds.label;
+  document.getElementById('p-date').textContent = DATES[i];
+  document.getElementById('p-val').textContent = v.toFixed(2) + (ds.unit||'');
+  document.getElementById('p-ref').textContent = 'Ref: ' + ds.lo + ' - ' + ds.hi + (ds.unit||'');
+  document.getElementById('p-status').textContent = statusText(v, ds.lo, ds.hi);
+  pop.style.display = 'block';
+  var r = el.getBoundingClientRect();
+  var pw = 200, ph = 110;
+  var left = r.left + r.width/2 - pw/2;
+  var top  = r.top - ph - 8;
+  if (left < 8) left = 8;
+  if (left + pw > window.innerWidth - 8) left = window.innerWidth - pw - 8;
+  if (top < 8) top = r.bottom + 8;
+  pop.style.left = left + 'px';
+  pop.style.top  = top  + 'px';
+  popTimer = setTimeout(function(){ pop.style.display='none'; }, 4000);
+}
+
 function buildChart(name) {
   var cfg = CHARTS[name];
-  var wrap = document.getElementById('svg-'+name);
-  if (!cfg||!wrap) return;
+  var container = document.getElementById('chart-' + name);
+  if (!cfg || !container) return;
+  container.innerHTML = '';
 
-  var VW=340, VH=240;
-  var PL=46,PR=10,PT=28,PB=36;
-  var cw=VW-PL-PR, ch=VH-PT-PB;
-  var n=LABELS.length;
+  var all = [];
+  cfg.datasets.forEach(function(ds){ ds.data.forEach(function(v){ all.push(v); }); });
+  var mn = Math.min.apply(null,all), mx = Math.max.apply(null,all), rng = mx-mn||1;
+  mn -= rng*0.15; mx += rng*0.15; rng = mx-mn;
 
-  var all=[];
-  cfg.datasets.forEach(function(ds){ ds.data.forEach(function(v){ if(v!==null) all.push(v); }); });
-  var mn=Math.min.apply(null,all), mx=Math.max.apply(null,all), rng=mx-mn||1;
-  mn-=rng*0.13; mx+=rng*0.13; rng=mx-mn;
+  function pct(v){ return (1 - (v-mn)/rng) * 100; }
+  function xpct(i){ return (i / (LABELS.length-1)) * 100; }
 
-  function xp(i){ return PL+(i/(n-1))*cw; }
-  function yp(v){ return PT+ch-((v-mn)/rng)*ch; }
+  // wrapper
+  var wrap = document.createElement('div');
+  wrap.className = 'chart';
 
-  var svg = el('svg',{viewBox:'0 0 '+VW+' '+VH,'xmlns':NS});
-
-  // grid
-  for(var s=0;s<=4;s++){
-    var yv=mn+(rng/4)*s, yy=yp(yv);
-    var gl=el('line',{x1:PL,y1:yy,x2:PL+cw,y2:yy,stroke:'rgba(0,0,0,0.08)',  'stroke-width':'0.5'});
-    svg.appendChild(gl);
-    var yt=el('text',{x:PL-4,y:yy+3,'text-anchor':'end','font-size':'9','fill':'#8e8e93','font-family':'-apple-system,sans-serif'});
-    yt.textContent=yv.toFixed(1);
-    svg.appendChild(yt);
-  }
-
-  // x labels
-  LABELS.forEach(function(l,i){
-    var xt=el('text',{x:xp(i),y:VH-PB+14,'text-anchor':'middle','font-size':'10','fill':'#8e8e93','font-family':'-apple-system,sans-serif'});
-    xt.textContent=l; svg.appendChild(xt);
+  // legend row
+  var legRow = document.createElement('div');
+  legRow.className = 'legend-row';
+  cfg.datasets.forEach(function(ds){
+    var s = document.createElement('span');
+    s.innerHTML = '<b style="background:'+ds.color+'"></b>' + ds.label;
+    legRow.appendChild(s);
   });
+  wrap.appendChild(legRow);
+
+  // chart inner
+  var inner = document.createElement('div');
+  inner.className = 'chart-inner';
+
+  // y axis
+  var yax = document.createElement('div');
+  yax.className = 'yaxis';
+  for (var s=0; s<=4; s++) {
+    var yv = mn + (rng/4)*s;
+    var sp = document.createElement('span');
+    sp.style.top = pct(yv) + '%';
+    sp.textContent = yv.toFixed(1);
+    yax.appendChild(sp);
+  }
+  inner.appendChild(yax);
+
+  // SVG for lines and ref bands only (pointer-events:none)
+  var NS = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(NS,'svg');
+  svg.setAttribute('class','chart-svg');
+  svg.setAttribute('viewBox','0 0 100 100');
+  svg.setAttribute('preserveAspectRatio','none');
+
+  // grid lines
+  for (var g=0; g<=4; g++) {
+    var yv2 = mn + (rng/4)*g;
+    var gl = document.createElementNS(NS,'line');
+    gl.setAttribute('x1','0'); gl.setAttribute('x2','100');
+    gl.setAttribute('y1',pct(yv2)); gl.setAttribute('y2',pct(yv2));
+    gl.setAttribute('stroke','rgba(0,0,0,0.07)'); gl.setAttribute('stroke-width','0.4');
+    svg.appendChild(gl);
+  }
 
   // ref bands
-  if(cfg.bands){ cfg.bands.forEach(function(b){
-    var y1=yp(Math.min(b.max,mx)), y2=yp(Math.max(b.min,mn));
-    svg.appendChild(el('rect',{x:PL,y:y1,width:cw,height:Math.abs(y2-y1),fill:b.fill}));
-  });}
+  if (cfg.bands) {
+    cfg.bands.forEach(function(b){
+      var y1 = pct(Math.min(b.max, mx));
+      var y2 = pct(Math.max(b.min, mn));
+      var rect = document.createElementNS(NS,'rect');
+      rect.setAttribute('x','0'); rect.setAttribute('width','100');
+      rect.setAttribute('y', Math.min(y1,y2));
+      rect.setAttribute('height', Math.abs(y2-y1));
+      rect.setAttribute('fill', b.color);
+      svg.appendChild(rect);
+    });
+  }
 
-  // lines
+  // lines per dataset
   cfg.datasets.forEach(function(ds){
-    var pts=[];
-    ds.data.forEach(function(v,i){ if(v!==null) pts.push(xp(i)+','+yp(v)); });
-    if(pts.length>1){
-      svg.appendChild(el('polyline',{points:pts.join(' '),fill:'none',stroke:ds.color,'stroke-width':'2','stroke-linejoin':'round'}));
-    }
+    var pts = [];
+    ds.data.forEach(function(v,i){ pts.push(xpct(i)+','+pct(v)); });
+    var pl = document.createElementNS(NS,'polyline');
+    pl.setAttribute('points', pts.join(' '));
+    pl.setAttribute('fill','none');
+    pl.setAttribute('stroke', ds.color);
+    pl.setAttribute('stroke-width','1.8');
+    pl.setAttribute('stroke-linejoin','round');
+    svg.appendChild(pl);
   });
 
-  // visible dots
+  inner.appendChild(svg);
+
+  // HTML div dots -- these get native touch events reliably on iOS
   cfg.datasets.forEach(function(ds){
     ds.data.forEach(function(v,i){
-      if(v===null)return;
-      var x=xp(i), y=yp(v), pc=ptColor(v,ds.lo,ds.hi);
-      svg.appendChild(el('circle',{cx:x,cy:y,r:6,fill:pc,stroke:'#fff','stroke-width':'2'}));
+      var pt = document.createElement('div');
+      pt.className = 'pt';
+      pt.style.left = xpct(i) + '%';
+      pt.style.top  = pct(v) + '%';
+
+      var dot = document.createElement('div');
+      dot.className = 'pt-dot';
+      dot.style.background = ptColor(v, ds.lo, ds.hi);
+      pt.appendChild(dot);
+
+      // closure to capture ds, v, i
+      (function(ds, v, i, pt){
+        pt.addEventListener('touchstart', function(e){
+          e.stopPropagation();
+          showPopup(ds, v, i, pt);
+        }, {passive:true});
+        pt.addEventListener('click', function(e){
+          e.stopPropagation();
+          showPopup(ds, v, i, pt);
+        });
+      })(ds, v, i, pt);
+
+      inner.appendChild(pt);
     });
   });
 
-  // single overlay rect catches all touches for this chart
-  var overlay=el('rect',{x:PL,y:0,width:cw,height:VH,fill:'transparent',style:'cursor:pointer'});
-  svg.appendChild(overlay);
+  wrap.appendChild(inner);
 
-  // store point coords for hit testing
-  var points=[];
-  cfg.datasets.forEach(function(ds){
-    ds.data.forEach(function(v,i){
-      if(v!==null) points.push({ds:ds,v:v,i:i,sx:xp(i),sy:yp(v)});
-    });
+  // x labels
+  var xlabs = document.createElement('div');
+  xlabs.className = 'xlabels';
+  LABELS.forEach(function(l){
+    var sp = document.createElement('span');
+    sp.textContent = l;
+    xlabs.appendChild(sp);
   });
+  wrap.appendChild(xlabs);
 
-  function findNearest(svgX,svgY){
-    var best=null,bd=9999;
-    points.forEach(function(p){
-      var d=Math.sqrt((svgX-p.sx)*(svgX-p.sx)+(svgY-p.sy)*(svgY-p.sy));
-      if(d<bd){bd=d;best=p;}
-    });
-    return bd<40?best:null;
-  }
-
-  function svgCoords(clientX,clientY){
-    var rect=svg.getBoundingClientRect();
-    var scaleX=VW/rect.width, scaleY=VH/rect.height;
-    return {x:(clientX-rect.left)*scaleX, y:(clientY-rect.top)*scaleY};
-  }
-
-  overlay.addEventListener('touchend',function(e){
-    e.preventDefault();
-    var t=e.changedTouches[0];
-    var sc=svgCoords(t.clientX,t.clientY);
-    var p=findNearest(sc.x,sc.y);
-    if(p) showTip(p.ds,p.v,p.i,t.clientX,t.clientY);
-    else document.getElementById('tipbox').style.display='none';
-  },{passive:false});
-
-  overlay.addEventListener('click',function(e){
-    var sc=svgCoords(e.clientX,e.clientY);
-    var p=findNearest(sc.x,sc.y);
-    if(p) showTip(p.ds,p.v,p.i,e.clientX,e.clientY);
-    else document.getElementById('tipbox').style.display='none';
-  });
-
-  // legend
-  var lx=PL, ly=PT-14;
-  cfg.datasets.forEach(function(ds){
-    var lr=el('rect',{x:lx,y:ly-8,width:10,height:10,fill:ds.color,rx:'2'});
-    svg.appendChild(lr);
-    var lt=el('text',{x:lx+13,y:ly+1,'font-size':'9','fill':'#1c1c1e','font-family':'-apple-system,sans-serif'});
-    lt.textContent=ds.label; svg.appendChild(lt);
-    lx+=ds.label.length*5.5+20;
-    if(lx>VW-40){lx=PL;ly-=13;}
-  });
-
-  wrap.innerHTML='';
-  wrap.appendChild(svg);
+  container.appendChild(wrap);
 }
-
-var tipTimeout;
-function showTip(ds,v,i,cx,cy){
-  var tip=document.getElementById('tipbox');
-  clearTimeout(tipTimeout);
-  var st=statusText(v,ds.lo,ds.hi);
-  tip.innerHTML='<b>'+ds.label+'</b><br>'+DATES[i]+'<br>'+v.toFixed(2)+(ds.unit||'')+'<br><span style="opacity:0.75">Ref: '+ds.lo+'&ndash;'+ds.hi+(ds.unit||'')+'</span><br><span style="opacity:0.75">'+st+'</span>';
-  tip.style.display='block';
-  var tw=tip.offsetWidth||150, th=tip.offsetHeight||80;
-  var left=cx+12; if(left+tw>window.innerWidth-8) left=cx-tw-12;
-  var top=cy-th-10; if(top<8) top=cy+14;
-  tip.style.left=left+'px'; tip.style.top=top+'px';
-  tipTimeout=setTimeout(function(){tip.style.display='none';},3000);
-}
-
-document.addEventListener('touchend',function(e){
-  if(!e.target.getAttribute('data-name')){
-    document.getElementById('tipbox').style.display='none';
-  }
-});
-document.addEventListener('click',function(e){
-  if(!e.target.getAttribute('data-name')){
-    document.getElementById('tipbox').style.display='none';
-  }
-});
 
 function showTab(name, btn) {
   document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
-  document.getElementById('tipbox').style.display='none';
+  document.getElementById('popup').style.display = 'none';
   btn.classList.add('active');
   document.getElementById('panel-'+name).classList.add('active');
-  if(CHARTS[name]){
-    buildChart(name);
-  }
 }
 
-// build all charts on load - SVG has no clientWidth dependency
-window.addEventListener('DOMContentLoaded',function(){
-  ['anamie','retik','niere','elektro'].forEach(function(n){ buildChart(n); });
+// close popup on background tap
+document.addEventListener('touchstart', function(e){
+  if (!e.target.closest('.pt') && !e.target.closest('.popup')) {
+    document.getElementById('popup').style.display = 'none';
+  }
+}, {passive:true});
+document.addEventListener('click', function(e){
+  if (!e.target.closest('.pt') && !e.target.closest('.popup')) {
+    document.getElementById('popup').style.display = 'none';
+  }
+});
+
+// build all charts immediately on load -- no clientWidth dependency
+window.addEventListener('DOMContentLoaded', function(){
+  ['anamie','retik','niere','elektro'].forEach(buildChart);
 });
 </script>
 </body>
