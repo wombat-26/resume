@@ -5,7 +5,7 @@
 
 ## 🎯 About
 
-This repository contains my professional CV and portfolio, showcasing 13+ years of expertise in technical writing, API documentation, and developer experience. Currently working as a Senior Technical Writer at Uptempo.io, specializing in modern documentation workflows and developer-focused content strategies.
+This repository contains my professional CV and portfolio, showcasing 14+ years of expertise in technical writing, API documentation, and developer experience. Currently working as a Senior Technic[...]
 
 ## 🚀 Live CV
 
@@ -49,57 +49,3 @@ This CV is built with modern web technologies and SEO best practices:
 - ✅ Open Graph tags for social sharing
 
 ## 📁 Repository Structure
-
-```
-resume/
-├── index.html                              # Main CV page
-├── MatthiasEckardt-Lebenslauf-Aktualisiert.html # German CV version
-├── portfolio-page.html                     # Portfolio showcase
-├── sitemap.xml                            # Search engine sitemap
-├── robots.txt                             # Crawler instructions
-├── Matthias_Eckardt.png                   # Profile photo
-└── README.md                              # This file
-```
-
-## 🎨 Design Philosophy
-
-The CV design emphasizes:
-- **Clean, professional aesthetics**
-- **Excellent readability and typography**
-- **Logical information hierarchy**
-- **Consistent visual language**
-- **Modern, minimalist approach**
-
-## 📱 Responsive Design
-
-The CV automatically adapts to different screen sizes:
-- **Desktop**: Full layout with sidebar and main content
-- **Tablet**: Optimized spacing and typography
-- **Mobile**: Single-column layout with touch-friendly elements
-- **Print**: Optimized for A4 paper with proper page breaks
-
-## 🔍 SEO Features
-
-Implemented comprehensive SEO optimization:
-- Structured data markup for better search understanding
-- Optimized meta descriptions and keywords
-- Social media preview optimization
-- Local SEO for München/Munich location
-- Technical writing industry keywords
-
-## 📞 Contact
-
-- **Email**: [meckardt@me.com](mailto:meckardt@me.com)
-- **Phone**: +49 170-805-2141
-- **Location**: München, Deutschland
-- **LinkedIn**: [linkedin.com/in/meckardt26](https://www.linkedin.com/in/meckardt26)
-
-## 📄 License
-
-This CV template and design is available for personal use. Please credit if you use it as inspiration for your own CV.
-
----
-
-*Last updated: January 2025*
-
-**[→ View Live CV](https://wombat-26.github.io/resume/)**
