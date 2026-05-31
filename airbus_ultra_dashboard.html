@@ -47,13 +47,10 @@
   .full { grid-column: 1 / -1; }
   .note { font-size: .78rem; color: #59a14f; margin-top: 6px; }
   @media (max-width: 500px) { .grid { grid-template-columns: 1fr; } }
-  .mobile-hint { display: none; font-size: .8rem; color: #f28e2b; margin-bottom: 12px; }
-  @media (max-width: 768px) { .mobile-hint { display: block; } }
 </style>
 </head>
 <body>
 
-<p class="mobile-hint">📱 Mobiltelefon: bitte im Querformat betrachten.</p>
 <h1>✈️ Airbus Ultra *</h1>
 <p class="subtitle">Telegram Gruppenanalyse &nbsp;·&nbsp; August 2017 – Mai 2026</p>
 
@@ -203,6 +200,11 @@ new Chart(document.getElementById('media'), {
   options: { plugins: { legend: { position: 'right',
     labels: { color: '#c8cfe0', font: { size: 11 }, boxWidth: 14 } } } }
 });
+</script>
+<script>
+if (window.innerWidth < 768) {
+  alert('📱 Bitte im Querformat betrachten.');
+}
 </script>
 </body>
 </html>
